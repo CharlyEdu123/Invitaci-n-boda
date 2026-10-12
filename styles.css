@@ -1,0 +1,49 @@
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  display: inline-block;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  background-color: #fcf9f3;
+  color: #1c1c18;
+  font-family: 'Montserrat', sans-serif;
+  min-height: max(884px, 100dvh);
+}
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+/* Estilos personalizados para la invitación de boda */
+.gold-foil-border {
+  border: 1px solid rgba(115, 91, 48, 0.25);
+}
+
+.parchment-shadow {
+  box-shadow: 0 4px 20px -2px rgba(28, 28, 24, 0.05);
+}
+
+/* Carrusel perfecto sin espacios en blanco */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-img {
+  position: absolute;
+  inset: 0; /* Cubre los cuatro bordes por completo sin dejar márgenes */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.carousel-img.active {
+  opacity: 1;
+}
