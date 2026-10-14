@@ -164,21 +164,38 @@ function closeLightbox() {
   modal.classList.add('hidden');
 }
 
-// 7. WhatsApp RSVP Generator
-function handleRsvpSubmit(e) {
+// Manejo del formulario RSVP enviado a WhatsApp
+document.getElementById('rsvp-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  const name = document.getElementById('guestName').value.trim();
-  const status = document.getElementById('attendanceStatus').value;
-  const count = document.getElementById('guestCount').value;
-  const message = document.getElementById('guestMessage').value.trim();
 
-  const phone = "524429998877";
-  const fullMessage = `¡Hola Sofía & Mateo! 👋💍\n\nConfirmo mi asistencia para su boda:\n• Nombre: ${name}\n• Estado: ${status}\n• Pases: ${count}\n${message ? `• Mensaje: "${message}"\n` : ''}\n¡Nos vemos el 18 de Octubre!`;
+  // 1. CONFIGURA TU NÚMERO DE TELÉFONO AQUÍ (con código de país, ej. 52 para México)
+  const numeroTelefono = "523220000000"; // Cambia este número por el tuyo
 
-  const encoded = encodeURIComponent(fullMessage);
-  const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
-  window.open(url, '_blank');
-}
+  // 2. Obtener los valores del formulario
+  const nombre = document.getElementById('nombre').value;
+  const asistencia = document.getElementById('asistencia').value;
+  const pases = document.getElementById('pases').value;
+  const mensaje = document.getElementById('mensaje').value;
+
+  // 3. Crear el mensaje con formato bonito para WhatsApp
+  let textoMensaje = `*¡Hola! Confirmación de asistencia a la boda* 💍\n\n`;
+  textoMensaje += `*Nombre:* ${nombre}\n`;
+  textoMensaje += `*Asistencia:* ${asistencia}\n`;
+  textoMensaje += `*Número de asistentes:* ${pases}\n`;
+  
+  if (mensaje.trim() !== "") {
+    textoMensaje += `*Notas/Mensaje:* ${mensaje}\n`;
+  }
+
+  // 4. Codificar el texto para la URL de WhatsApp
+  const mensajeEncoded = encodeURIComponent(textoMensaje);
+
+  // 5. Crear el enlace directo a WhatsApp
+  const urlWhatsApp = `https://wa.me/${numeroTelefono}?text=${mensajeEncoded}`;
+
+  // 6. Abrir en una pestaña nueva
+  window.open(urlWhatsApp, '_blank');
+});
 
 // 8. Recomendador de Música
 function handleSongSubmit(e) {
