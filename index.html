@@ -1,466 +1,998 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="es">
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="es" style="">
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Boda Sofía & Mateo — Invitación Digital</title>
-    
-    <!-- Meta tags Open Graph para WhatsApp -->
-    <meta property="og:title" content="¡Nos Casamos! - Sofía & Mateo">
-    <meta property="og:description" content="Te invitamos a celebrar nuestra boda este 18 de Octubre de 2025. Haz clic para ver los detalles.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552">
-    <meta property="og:type" content="website">
-
-    <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "tertiary": "#6a4332", "tertiary-fixed-dim": "#f1baa5", "secondary-fixed-dim": "#e2c28e", "secondary": "#735b30", "on-error": "#ffffff", "surface": "#fcf9f3", "background": "#fcf9f3", "surface-tint": "#546250", "on-surface-variant": "#444841", "on-secondary-fixed": "#271900", "inverse-on-surface": "#f3f0ea", "surface-container-high": "#ebe8e2", "inverse-surface": "#31312d", "on-primary": "#ffffff", "outline-variant": "#c4c8bf", "surface-container-low": "#f6f3ed", "on-tertiary-container": "#ffdacc", "on-tertiary-fixed-variant": "#633d2d", "surface-bright": "#fcf9f3", "secondary-fixed": "#ffdea9", "primary-fixed": "#d8e7cf", "surface-container-lowest": "#ffffff", "surface-variant": "#e5e2dc", "on-primary-fixed-variant": "#3d4a39", "on-primary-container": "#d7e6ce", "primary-fixed-dim": "#bccbb4", "secondary-container": "#fcdba5", "tertiary-container": "#855a48", "on-background": "#1c1c18", "primary": "#42503e", "inverse-primary": "#bccbb4", "surface-container-highest": "#e5e2dc", "on-surface": "#1c1c18", "tertiary-fixed": "#ffdbcd", "on-secondary-fixed-variant": "#59431a", "surface-container": "#f0eee8", "outline": "#747871", "error-container": "#ffdad6", "on-primary-fixed": "#121f10", "on-secondary": "#ffffff", "primary-container": "#5a6855", "on-tertiary": "#ffffff", "on-tertiary-fixed": "#301306", "on-secondary-container": "#775f33", "surface-dim": "#dcdad4", "error": "#ba1a1a", "on-error-container": "#93000a"
-              }
-            }
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title class="">Boda Rubén &amp; Yareli — Invitación Digital</title>
+<!-- Material Symbols Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Playfair Display & Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#2F3E27",
+            "primary-container": "#3d5033",
+            "on-primary": "#ffffff",
+            "secondary": "#6F7B58",
+            "secondary-container": "#e4ecdb",
+            "on-secondary": "#ffffff",
+            "tertiary": "#A2B984",
+            "tertiary-container": "#c9dbb5",
+            "on-tertiary": "#1a2a10",
+            "neutral-bg": "#F7F5ED",
+            "surface": "#F7F5ED",
+            "background": "#F7F5ED",
+            "surface-card": "#FFFFFF",
+            "surface-container": "#F2EFE6",
+            "surface-container-low": "#FAF8F2",
+            "surface-container-high": "#EAE6DB",
+            "outline": "#788171",
+            "outline-variant": "#D0D7C6",
+            "on-surface": "#23281E",
+            "on-surface-variant": "#4F5948",
+            "secondary-fixed": "#DCE5D1",
+            "on-secondary-fixed": "#1B2412"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xl": "2.75rem",
+            "margin": "1.25rem",
+            "space-lg": "1.75rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "display-mobile": ["Playfair Display", "serif"],
+            "display": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "body-lg": ["Montserrat", "sans-serif"],
+            "label-md": ["Montserrat", "sans-serif"],
+            "headline-lg-mobile": ["Playfair Display", "serif"],
+            "body-md": ["Montserrat", "sans-serif"],
+            "label-lg": ["Montserrat", "sans-serif"]
           }
         }
-    </script>
-    <link rel="stylesheet" href="styles.css">
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background-color: #e5e2d6;
+      color: #23281E;
+      font-family: 'Montserrat', sans-serif;
+      min-height: max(884px, 100dvh);
+    }
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Uniform cohesive botanical decorative watermark style */
+    .botanical-accent {
+      mix-blend-mode: multiply;
+      opacity: 0.35;
+      filter: saturate(0.85);
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
 </head>
-<body class="bg-[#ede8df] text-on-surface antialiased font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<body class="bg-[#e7e5dc] text-on-surface antialiased font-body-md selection:bg-tertiary selection:text-primary">
+<div class="relative max-w-[480px] mx-auto min-h-screen bg-[#F7F5ED] shadow-2xl overflow-x-hidden flex flex-col">
 
-<div class="relative max-w-[480px] mx-auto min-h-screen bg-surface shadow-2xl overflow-x-hidden flex flex-col">
-    <!-- TopAppBar -->
-    <header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-4 py-2 max-w-[480px] mx-auto right-0 bg-surface/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
-        <div class="flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary text-[20px]">favorite</span>
-            <span class="font-semibold text-xs tracking-widest text-primary">18.10.2025</span>
-        </div>
-        <div class="font-serif tracking-widest text-primary font-bold text-lg">S & M</div>
-        <button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-secondary/40 bg-surface-container-low hover:bg-surface-container transition-all" id="musicToggleBtn">
-            <span class="material-symbols-outlined text-primary text-[18px]" id="musicIcon">music_note</span>
-            <span class="text-[9px] uppercase tracking-wider text-primary font-medium" id="musicLabel">Música</span>
-            <div class="hidden items-end gap-[2px] h-3 ml-0.5" id="soundWaveAnim">
-                <div class="w-[2px] bg-primary rounded-full"></div>
-                <div class="w-[2px] bg-primary rounded-full"></div>
-            </div>
-        </button>
-    </header>
+    <!-- Background side foliage with uniform cohesive opacity: 0.35, multiply blend, and delicate watermark look -->
+<div aria-hidden="true" class="pointer-events-none select-none absolute inset-0 z-0 overflow-hidden">
+<img alt="" class="absolute -left-10 top-24 w-32 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -right-10 top-80 w-32 h-auto botanical-accent scale-x-[-1]" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -left-10 top-[900px] w-36 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -right-10 top-[1650px] w-36 h-auto botanical-accent scale-x-[-1]" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -left-10 top-[2300px] w-36 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -right-10 top-[3000px] w-36 h-auto botanical-accent scale-x-[-1]" src="Decoracion/Flor1.jpg">
+<img alt="" class="absolute -left-10 top-[3700px] w-36 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
+</div>
 
-    <!-- CONTENIDO PRINCIPAL -->
-    <main class="pt-16 flex-1">
-        <!-- HERO SECTION -->
-        <section class="relative px-4 pt-6 pb-11 flex flex-col items-center text-center" id="hero">
-            <div class="w-16 h-16 rounded-full border border-secondary/40 flex items-center justify-center bg-surface-container-low mb-5 relative">
-                <span class="absolute -top-1.5 text-secondary material-symbols-outlined text-[14px]">local_florist</span>
-                <span class="font-serif text-primary text-xl font-semibold tracking-widest">S&M</span>
-            </div>
-            <p class="text-xs uppercase tracking-[0.25em] text-secondary font-medium mb-2">Nuestra Boda</p>
-            <h1 class="font-serif text-3xl text-primary font-normal leading-tight mb-3">Sofía & Mateo</h1>
-            <div class="w-12 h-[1px] bg-secondary/50 my-2"></div>
-            <p class="font-serif italic text-primary/80 text-[15px] max-w-xs leading-relaxed mb-6 font-light">
-                «Con la bendición de Dios y de nuestras familias, tenemos el gozo de invitarte a celebrar el inicio de nuestra vida juntos.»
-            </p>
-            
-            <div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden p-2 bg-surface-container-low mb-6 border border-secondary/20 shadow-sm">
-                <div class="w-full h-full rounded-lg overflow-hidden relative">
-                    <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Foto de los novios">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-4 left-0 right-0 text-center text-surface px-4">
-                        <span class="text-xs uppercase tracking-[0.2em]">Sábado, 18 de Octubre de 2025</span>
-                        <p class="font-serif text-lg italic text-surface">Querétaro, México</p>
-                    </div>
-                </div>
-            </div>
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-margin py-space-sm max-w-[480px] mx-auto right-0 bg-[#F7F5ED]/90 backdrop-blur-md border-b border-[#A2B984]/30 shadow-sm transition-all duration-300"><div class="flex items-center gap-2 z-10">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="favorite">favorite</span>
+<span class="font-label-md text-label-md uppercase tracking-widest text-primary font-semibold">14.11.2026</span>
+</div>
+<div class="absolute left-1/2 -translate-x-1/2 font-headline-md text-headline-md tracking-widest text-primary font-bold text-center pointer-events-none select-none">
+    R &amp; Y
+  </div>
+<button class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-full border border-secondary/40 bg-[#FAF8F2] hover:bg-[#F2EFE6] active:scale-95 transition-all duration-200 z-10" id="musicToggleBtn">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="music_note" id="musicIcon">music_note</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-medium" id="musicLabel">Música</span>
+<div class="hidden items-end gap-[2px] h-3 ml-0.5" id="soundWaveAnim">
+<div class="w-[2px] bg-primary h-2 rounded-full animate-pulse"></div>
+<div class="w-[2px] bg-primary h-3 rounded-full animate-pulse" style="animation-delay: 0.15s"></div>
+<div class="w-[2px] bg-primary h-2 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
+</div>
+</button></header>
+<audio id="backgroundMusic" loop preload="auto" autoplay>
+  <source src="Musica/Rampa, Adam Port, &amp;ME - Crazy For It (SPOTISAVER).mp3" type="audio/mpeg">
+</audio>
 
-            <!-- COUNTDOWN TIMER -->
-            <div class="w-full bg-surface-container-low/80 rounded-xl p-5 border border-secondary/20 shadow-sm">
-                <p class="text-xs uppercase tracking-widest text-secondary font-semibold mb-4 text-center">Cuenta Regresiva Para El Gran Día</p>
-                <div class="grid grid-cols-4 gap-2 text-center">
-                    <div class="bg-surface rounded p-2 border border-outline-variant/30">
-                        <span class="font-serif text-2xl text-primary font-normal block leading-tight" id="cd-days">00</span>
-                        <span class="text-[9px] uppercase tracking-wider text-outline">Días</span>
-                    </div>
-                    <div class="bg-surface rounded p-2 border border-outline-variant/30">
-                        <span class="font-serif text-2xl text-primary font-normal block leading-tight" id="cd-hours">00</span>
-                        <span class="text-[9px] uppercase tracking-wider text-outline">Horas</span>
-                    </div>
-                    <div class="bg-surface rounded p-2 border border-outline-variant/30">
-                        <span class="font-serif text-2xl text-primary font-normal block leading-tight" id="cd-minutes">00</span>
-                        <span class="text-[9px] uppercase tracking-wider text-outline">Minutos</span>
-                    </div>
-                    <div class="bg-surface rounded p-2 border border-outline-variant/30">
-                        <span class="font-serif text-2xl text-primary font-normal block leading-tight text-secondary" id="cd-seconds">00</span>
-                        <span class="text-[9px] uppercase tracking-wider text-outline">Segundos</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<!-- CONTENT CANVAS -->
+<main class="pt-16 flex-1">
 
-        <!-- BIENVENIDA -->
-        <section class="px-4 py-6 text-center bg-surface-container-low/50 border-y border-outline-variant/30">
-            <span class="material-symbols-outlined text-secondary text-2xl mb-2">favorite</span>
-            <h2 class="font-serif text-xl text-primary mb-3">Querida Familia y Amigos</h2>
-            <p class="text-sm text-on-surface-variant leading-relaxed max-w-sm mx-auto font-light">
-                Hay momentos en la vida que son irrepetibles, pero compartirlos con quienes más amamos los hace eternos. Gracias por ser parte de nuestra historia.
-            </p>
-            <p class="font-serif italic text-primary mt-4 font-normal text-lg">Con todo nuestro cariño, Sofía & Mateo</p>
-        </section>
+    <!-- HERO SECTION -->
+<section class="relative px-margin pt-2 pb-space-xl flex flex-col items-center text-center overflow-hidden" id="hero">
+<!-- Botanical Garland organically draped at top with uniform 0.35 opacity -->
+<div class="absolute -top-6 left-1/2 -translate-x-1/2 w-full max-w-[480px] pointer-events-none select-none z-0 botanical-accent flex justify-center">
+<img alt="Guirnalda floral de rosas" class="w-full object-contain scale-110" src="Decoracion/Flor3.jpg">
+</div>
+<!-- Monogram -->
+<div class="w-16 h-16 rounded-full border border-secondary/40 flex items-center justify-center bg-[#FAF8F2]/90 mb-4 shadow-sm relative z-10">
+<span class="absolute -top-1.5 text-secondary material-symbols-outlined text-[14px]" data-icon="local_florist">local_florist</span>
+<span class="font-headline-md text-primary text-xl font-semibold tracking-widest">R&amp;Y</span>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-medium mb-2 relative z-10">
+      Nuestra Boda
+    </p>
+<h1 class="font-display-mobile text-display-mobile text-primary font-normal leading-tight mb-3 relative z-10">Rubén &amp; Yareli</h1>
+<div aria-hidden="true" class="flex items-center justify-center gap-2 my-2 w-full max-w-xs relative z-10">
+<div class="h-[1px] flex-1 bg-tertiary"></div>
+<svg class="w-6 h-6 text-secondary/70 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-1.5 3-4 5-8 5.5 2.5 1.5 5 1 7-0.5-0.5 2-0.5 4.5 1 6.5 1.5-2 1.5-4.5 1-6.5 2 1.5 4.5 2 7 0.5-4-0.5-6.5-2.5-8-5.5z" opacity="0.7"></path><circle cx="12" cy="15" fill="#6F7B58" r="1.2"></circle></svg>
+<div class="h-[1px] flex-1 bg-tertiary"></div>
+</div>
+<p class="font-headline-md italic text-primary/80 text-[15px] max-w-xs leading-relaxed mb-6 font-light relative z-10">
+      «Con la bendición de Dios y de nuestras familias, tenemos el gozo de invitarte a celebrar el inicio de nuestra vida juntos.»
+    </p>
+<!-- Main Photo Frame with Organic Watercolor Floral Accents with uniform 0.35 opacity -->
+<div class="relative w-full mb-6">
+<!-- Organic Floral Accent peeking behind upper left of photo -->
+<div class="absolute -top-8 -left-8 w-40 h-40 botanical-accent z-20">
+<img alt="Flor acuarela" class="w-full h-full object-contain" src="Decoracion/Flor3.jpg">
+</div>
+<!-- Organic Floral Accent peeking behind bottom right of photo -->
+<div class="absolute -bottom-8 -right-8 w-40 h-40 botanical-accent z-20 rotate-180">
+<img alt="Flor acuarela" class="w-full h-full object-contain" src="Decoracion/Flor3.jpg">
+</div>
+<div class="relative w-full aspect-[4/5] rounded-xl overflow-hidden shadow-lg border border-secondary/30 p-2 bg-[#FAF8F2] z-10">
+<div class="w-full h-full rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="An ethereal fine-art wedding photograph of an elegant bride and groom smiling gently in a sunlit garden hacienda. Soft cinematic champagne morning light highlights the delicate lace of the bride's gown and the dark forest olive suit of the groom. The tone is deeply romantic, calm, and captured in an editorial fine art stationery style with organic warm earthy tones." src="Imagenes/Imagen.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-0 right-0 text-center text-white px-4 z-10">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] text-[#F7F5ED] drop-shadow">Sábado, 14 de Noviembre de 2026</span>
+<p class="font-headline-md text-lg italic text-[#FAF8F2] drop-shadow">Querétaro, México</p>
+</div>
+</div>
+</div>
+</div>
+<!-- COUNTDOWN TIMER -->
+<div class="w-full bg-[#FFFFFF] rounded-xl p-5 shadow-sm border border-secondary/30 relative overflow-hidden">
+<!-- Uniform subtle botanical watermark accent -->
+<img alt="" class="absolute -right-10 -bottom-10 w-44 h-44 object-contain botanical-accent" src="Decoracion/Flor.jpg">
+<p class="font-label-md text-label-md uppercase tracking-widest text-secondary font-semibold mb-4 text-center relative z-10">
+        Cuenta regresiva para el gran día
+      </p>
+<div class="grid grid-cols-4 gap-2 text-center relative z-10">
+<div class="bg-[#FAF8F2] rounded p-2 border border-tertiary/40 shadow-xs">
+<span class="font-headline-md text-2xl text-primary font-normal block leading-tight" id="cd-days">00</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline">Días</span>
+</div>
+<div class="bg-[#FAF8F2] rounded p-2 border border-tertiary/40 shadow-xs">
+<span class="font-headline-md text-2xl text-primary font-normal block leading-tight" id="cd-hours">00</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline">Horas</span>
+</div>
+<div class="bg-[#FAF8F2] rounded p-2 border border-tertiary/40 shadow-xs">
+<span class="font-headline-md text-2xl text-primary font-normal block leading-tight" id="cd-minutes">00</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline">Minutos</span>
+</div>
+<div class="bg-[#FAF8F2] rounded p-2 border border-tertiary/40 shadow-xs">
+<span class="font-headline-md text-2xl text-primary font-semibold block leading-tight" id="cd-seconds">00</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-semibold">Segundos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- BIENVENIDA & MENSAJE CON INTEGRACIÓN BOTÁNICA NATURAL -->
+<section class="relative px-margin py-space-lg text-center bg-[#FAF8F2] border-y border-tertiary/30 overflow-hidden">
+<div class="absolute -top-6 -left-6 w-28 h-28 botanical-accent">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="absolute -bottom-6 -right-6 w-28 h-28 botanical-accent rotate-180">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3 relative z-10">Querida familia y amigos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm mx-auto font-light relative z-10">
+      Hay momentos en la vida que son irrepetibles, pero compartirlos con quienes más amamos los hace eternos. Gracias por ser parte de nuestra historia y por acompañarnos en el día más feliz de nuestras vidas.
+    </p>
+<p class="font-headline-md italic text-primary mt-4 font-normal text-lg relative z-10">Con todo nuestro cariño, Rubén &amp; Yareli</p>
+</section>
+<!-- UBICACIONES: DÓNDE & CUÁNDO -->
+<section class="relative px-margin py-space-xl overflow-hidden" id="ubicaciones">
+<div class="text-center mb-8 relative">
+<div class="absolute left-1/2 -top-6 -translate-x-1/2 w-80 h-16 botanical-accent">
+<img alt="" class="w-full h-full object-cover" src="Decoracion/Flor3.jpg">
+</div>
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold relative z-10">Ubicaciones</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1 relative z-10">Dónde &amp; Cuándo</h2>
+<div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 relative z-10"></div>
+</div>
+<div class="space-y-5 relative">
+<!-- Card 1: Ceremonia -->
+<div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm relative overflow-hidden">
+<img alt="" class="absolute -right-10 -bottom-10 w-44 h-44 object-contain botanical-accent" src="Decoracion/Flor.jpg">
+<div class="flex items-center gap-3 mb-3 relative z-10">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed border border-secondary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="church">church</span>
+</div>
+<div>
+<span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">15:00 hrs</span>
+<h3 class="font-headline-md text-lg text-primary leading-tight font-medium">Ceremonia Religiosa</h3>
+</div>
+</div>
+<div class="space-y-1 text-on-surface-variant font-light text-sm mb-4 pl-1 relative z-10">
+<p class="font-medium text-primary">Parroquia La Divina Misericordia</p>
+<p class="">Misa a las 15:00 hrs</p>
+<p class="text-xs text-outline">Iglesia</p>
+</div>
+<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2215.782470760733!2d-105.26991840000001!3d20.7165519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842146f450af0867%3A0x827ff0a51b58670f!2sParroquia%20La%20Divina%20Misericordia!5e1!3m2!1ses-419!2smx!4v1791964085024!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la Parroquia La Divina Misericordia"></iframe>
+<div class="pt-2 border-t border-tertiary/30 relative z-10">
+<a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://www.google.com/maps/search/?api=1&query=Parroquia%20La%20Divina%20Misericordia" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
+<span class="">Ver en Google Maps</span>
+</a>
+</div>
+</div>
+<!-- Card 2: Recepción -->
+<div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm relative overflow-hidden">
+<img alt="" class="absolute -right-8 -bottom-8 w-44 h-44 object-contain botanical-accent transform scale-x-[-1]" src="Decoracion/Flor.jpg">
+<div class="flex items-center gap-3 mb-3 relative z-10">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed border border-secondary/30 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="celebration">celebration</span>
+</div>
+<div>
+<span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">18:00 hrs</span>
+<h3 class="font-headline-md text-lg text-primary leading-tight font-medium">Registro civil, recepción y fiesta</h3>
+</div>
+</div>
+<div class="space-y-1 text-on-surface-variant font-light text-sm mb-4 pl-1 relative z-10">
+<p class="font-medium text-primary">MAVA Jardín de eventos</p>
+<p class="">Ceremonia del registro civil y celebración</p>
+<p class="text-xs text-outline">Recepción, banquete y fiesta</p>
+</div>
+<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.731271155218!2d-105.27634770000002!3d20.6944228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8421472d6fb3a0e5%3A0x82379f2a050c5f70!2sMAVA%20Jard%C3%ADn%20de%20eventos!5e1!3m2!1ses-419!2smx!4v1791964210075!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de MAVA Jardín de eventos"></iframe>
+<div class="pt-2 border-t border-tertiary/30 relative z-10">
+<a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://www.google.com/maps/search/?api=1&query=MAVA%20Jard%C3%ADn%20de%20eventos" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
+<span class="">Ver en Google Maps</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECCIÓN INDEPENDIENTE: ITINERARIO -->
+<section class="px-margin py-space-xl bg-[#FAF8F2] border-t border-tertiary/30 relative overflow-hidden" id="itinerario">
+<div class="absolute -right-8 -top-8 w-36 h-36 botanical-accent">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor3.jpg">
+</div>
+<div class="absolute -left-10 bottom-4 w-32 h-auto botanical-accent">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="text-center mb-8 relative z-10">
+<div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#FFFFFF] border border-secondary/30 mb-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="schedule">schedule</span>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Itinerario</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Programa del Gran Día</h2>
+<div class="w-10 h-[1px] bg-tertiary mx-auto my-2"></div>
+<p class="font-body-md text-xs text-on-surface-variant font-light max-w-xs mx-auto">
+        Cada momento ha sido preparado con amor para celebrar nuestra unión contigo.
+      </p>
+</div>
+<!-- Tarjeta Resumen con CTA -->
+<div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm space-y-4 relative overflow-hidden">
+<img alt="" class="absolute -right-8 -top-8 w-36 h-36 object-contain botanical-accent" src="Decoracion/Flor.jpg">
+<!-- Mini Preview Timeline -->
+<div class="grid grid-cols-3 gap-2.5 text-center pb-2 border-b border-tertiary/30 relative z-10">
+<div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
+<span class="font-label-md text-[10px] text-secondary font-bold block">15:00 hrs</span>
+<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="church">church</span>
+<p class="font-headline-md text-xs text-primary font-medium leading-tight">Ceremonia</p>
+</div>
+<div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
+<span class="font-label-md text-[10px] text-secondary font-bold block">18:00 hrs</span>
+<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="local_bar">local_bar</span>
+<p class="font-headline-md text-xs text-primary font-medium leading-tight">Cóctel</p>
+</div>
+<div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
+<span class="font-label-md text-[10px] text-secondary font-bold block">20:00 hrs</span>
+<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="restaurant">restaurant</span>
+<p class="font-headline-md text-xs text-primary font-medium leading-tight">Banquete</p>
+</div>
+</div>
+<p class="font-body-md text-xs text-outline font-light text-center leading-relaxed relative z-10">
+        Conoce todos los horarios, detalles y sorpresas de la celebración completa paso a paso.
+      </p>
+<button class="w-full py-3.5 px-4 bg-primary text-white rounded-xl font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2.5 hover:bg-primary-container active:scale-95 transition-all shadow-md border border-secondary/30 relative z-10" onclick="openItineraryModal()">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="event_note">event_note</span>
+<span class="">Ver Itinerario Detallado</span>
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- DRESS CODE -->
+<section class="px-margin py-space-xl bg-[#FAF8F2] border-t border-tertiary/30 relative overflow-hidden" id="codigo-vestimenta">
+<div class="text-center mb-8 relative z-10">
+<div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#FFFFFF] border border-secondary/30 mb-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="styler">styler</span>
+</div>
+<p class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Etiqueta y estilo</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Código de vestimenta</h2>
+<div class="w-10 h-[1px] bg-tertiary mx-auto my-2"></div>
 
-        <!-- UBICACIONES -->
-        <section class="px-4 py-8" id="ubicaciones">
-            <div class="text-center mb-8">
-                <span class="text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Ubicaciones</span>
-                <h2 class="font-serif text-2xl text-primary mt-1">Dónde & Cuándo</h2>
-                <div class="w-8 h-[1px] bg-secondary mx-auto mt-2"></div>
-            </div>
-            <div class="space-y-5">
-                <div class="bg-surface-container-low rounded-xl p-5 border border-secondary/20 shadow-sm">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-[20px]">church</span>
-                        </div>
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">16:30 hrs</span>
-                            <h3 class="font-serif text-lg text-primary leading-tight font-medium">Ceremonia Religiosa</h3>
-                        </div>
-                    </div>
-                    <div class="space-y-1 text-on-surface-variant font-light text-sm mb-4 pl-1">
-                        <p class="font-medium text-primary">Parroquia de San Francisco</p>
-                        <p>Andador 5 de Mayo #12, Centro Histórico</p>
-                    </div>
-                    <a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg border border-secondary/40 bg-surface text-primary text-xs uppercase tracking-wider hover:bg-secondary-fixed/30 transition-all" href="https://maps.google.com/?q=Parroquia+de+San+Francisco+Queretaro" target="_blank" rel="noopener noreferrer">
-                        <span class="material-symbols-outlined text-[18px] text-secondary">map</span>
-                        <span>Ver en Google Maps</span>
-                    </a>
-                </div>
-
-                <div class="bg-surface-container-low rounded-xl p-5 border border-secondary/20 shadow-sm">
-                    <div class="flex items-center gap-3 mb-3">
-                        <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-[20px]">celebration</span>
-                        </div>
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-secondary font-bold">18:00 hrs</span>
-                            <h3 class="font-serif text-lg text-primary leading-tight font-medium">Recepción & Fiesta</h3>
-                        </div>
-                    </div>
-                    <div class="space-y-1 text-on-surface-variant font-light text-sm mb-4 pl-1">
-                        <p class="font-medium text-primary">Hacienda Los Laureles</p>
-                        <p>Camino Antiguo al Pueblito Km 4.5</p>
-                    </div>
-                    <a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg border border-secondary/40 bg-surface text-primary text-xs uppercase tracking-wider hover:bg-secondary-fixed/30 transition-all" href="https://maps.google.com/?q=Hacienda+Los+Laureles+Queretaro" target="_blank" rel="noopener noreferrer">
-                        <span class="material-symbols-outlined text-[18px] text-secondary">map</span>
-                        <span>Ver en Google Maps</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- ITINERARIO -->
-        <section class="px-4 py-8 bg-surface-container-low/40 border-t border-outline-variant/30" id="itinerario">
-            <div class="text-center mb-6">
-                <span class="text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Itinerario</span>
-                <h2 class="font-serif text-2xl text-primary mt-1">Programa del Día</h2>
-                <div class="w-10 h-[1px] bg-secondary/50 mx-auto my-2"></div>
-            </div>
-            <div class="bg-surface rounded-xl p-5 border border-secondary/20 shadow-sm text-center">
-                <button class="w-full py-3.5 px-4 bg-primary text-surface rounded-xl text-xs uppercase tracking-widest flex items-center justify-center gap-2.5 hover:bg-primary-container transition-all shadow-md" onclick="openItineraryModal()">
-                    <span class="material-symbols-outlined text-[18px]">event_note</span>
-                    <span>Ver Itinerario Detallado</span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </button>
-            </div>
-        </section>
-
-        <!-- DRESS CODE -->
-<section class="px-4 py-11 bg-surface-container-low/40 border-t border-outline-variant/30 relative overflow-hidden" id="codigo-vestimenta">
-    <div class="text-center mb-8">
-        <div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-surface-container border border-secondary/30 mb-2">
-            <span class="material-symbols-outlined text-secondary text-[20px]">styler</span>
-        </div>
-        <p class="text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Etiqueta & Estilo</p>
-        <h2 class="font-serif text-2xl text-primary mt-1">Código de Vestimenta</h2>
-        <div class="w-10 h-[1px] bg-secondary/50 mx-auto my-2"></div>
-        <span class="inline-block px-3 py-1 bg-surface-container border border-secondary/30 rounded-full text-[10px] uppercase tracking-widest text-primary font-medium mt-1">
-            Formal Riguroso / Black Tie Optional
-        </span>
-    </div>
-
-    <div class="bg-surface rounded-xl p-5 gold-foil-border parchment-shadow space-y-6">
-        
-        <!-- Tarjeta Hombres / Caballeros -->
-        <div class="bg-surface-container-low/50 rounded-xl p-4 border border-outline-variant/30 parchment-shadow">
-            <div class="flex items-center gap-3 mb-3 pb-3 border-b border-outline-variant/20">
-                <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-                    <span class="material-symbols-outlined text-[20px]">man</span>
-                </div>
-                <div>
-                    <span class="text-[9px] uppercase tracking-widest text-secondary font-bold block">Caballeros</span>
-                    <h3 class="font-serif text-base text-primary font-medium">Hombres</h3>
-                </div>
-            </div>
-            <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-3">
-                Traje formal oscuro, esmoquin clásico o traje sastre con corbata o pajarita/moño, acompañado de zapato formal de vestir y camisa de puño clásico.
-            </p>
-            <div class="bg-surface rounded-lg p-3 border border-outline-variant/20">
-                <span class="text-[9px] uppercase tracking-widest text-secondary font-semibold block text-center mb-2.5">
-                    Paleta sugerida para caballeros
-                </span>
-                <div class="grid grid-cols-4 gap-2 text-center">
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#1e293b] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Azul Noche</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#334155] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Carbón</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#2f3e34] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Verde Bosque</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#111827] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Negro Clásico</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tarjeta Mujeres / Damas -->
-        <div class="bg-surface-container-low/50 rounded-xl p-4 border border-outline-variant/30 parchment-shadow">
-            <div class="flex items-center gap-3 mb-3 pb-3 border-b border-outline-variant/20">
-                <div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-                    <span class="material-symbols-outlined text-[20px]">woman</span>
-                </div>
-                <div>
-                    <span class="text-[9px] uppercase tracking-widest text-secondary font-bold block">Damas</span>
-                    <h3 class="font-serif text-base text-primary font-medium">Mujeres / Ellas</h3>
-                </div>
-            </div>
-            <p class="text-xs text-on-surface-variant font-light leading-relaxed mb-2">
-                Vestido largo de gala o noche elegante en telas fluidas y sofisticadas.
-            </p>
-            <div class="mb-3">
-                <span class="text-[8px] uppercase tracking-wider text-secondary font-semibold block mb-0.5">Calzado sugerido</span>
-                <p class="text-[11px] text-outline font-light leading-snug">Tacón ancho, bloque o cuña recomendado especialmente para áreas de jardín y adoquín.</p>
-            </div>
-            <div class="bg-surface rounded-lg p-3 border border-outline-variant/20">
-                <span class="text-[9px] uppercase tracking-widest text-secondary font-semibold block text-center mb-2.5">
-                    Paleta sugerida para damas
-                </span>
-                <div class="grid grid-cols-5 gap-1.5 text-center">
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#5a6855] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Salvia</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#c2a676] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Champagne</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#9b5b48] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Terracota</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#d8a48f] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Rosa Palo</span>
-                    </div>
-                    <div class="flex flex-col items-center gap-1">
-                        <div class="w-7 h-7 rounded-full bg-[#dfcfb8] shadow-sm border border-black/10"></div>
-                        <span class="text-[8px] uppercase tracking-wider text-outline leading-tight">Arena</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Nota de Cortesía / Novia -->
-        <div class="bg-surface-container rounded-lg p-3 text-center border-l-2 border-secondary flex items-center gap-2.5">
-            <span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0">favorite</span>
-            <p class="font-serif italic text-xs text-primary leading-relaxed font-light text-left">
-                Nota de cortesía: «Nos reservamos con todo cariño los tonos blanco, marfil, perla, crema y beige exclusivamente para la novia.»
-            </p>
-        </div>
-
-    </div>
+</div>
+<div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm space-y-6 relative overflow-hidden">
+<!-- Uniform subtle botanical watermark accent -->
+<img alt="" class="absolute -right-10 -top-8 w-44 h-44 object-contain botanical-accent" src="Decoracion/Flor3.jpg">
+<!-- Tarjeta Hombres / Caballeros -->
+<div class="bg-[#FAF8F2] rounded-xl p-4 border border-tertiary/30 shadow-sm relative z-10">
+<div class="flex items-center gap-3 mb-3 pb-3 border-b border-tertiary/20">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed border border-secondary/30 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="man">man</span>
+</div>
+<div>
+<span class="font-label-md text-[9px] uppercase tracking-widest text-secondary font-bold block">Caballeros</span>
+<h3 class="font-headline-md text-base text-primary font-medium">Hombres</h3>
+</div>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant font-light leading-relaxed mb-3">
+          Traje formal oscuro, esmoquin clásico o traje sastre con corbata o pajarita/moño, acompañado de zapato formal de vestir y camisa de puño clásico.
+        </p>
+<div class="bg-[#FFFFFF] rounded-lg p-3 border border-tertiary/30">
+<span class="font-label-md text-[9px] uppercase tracking-widest text-secondary font-semibold block text-center mb-2.5">
+            Paleta sugerida para caballeros
+          </span>
+<div class="grid grid-cols-4 gap-2 text-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#1b263b] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Azul Noche</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#334155] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Carbón</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#2F3E27] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Verde Bosque</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#111827] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Negro Clásico</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tarjeta Mujeres / Damas -->
+<div class="bg-[#FAF8F2] rounded-xl p-4 border border-tertiary/30 shadow-sm relative z-10 overflow-hidden">
+<img alt="" class="absolute -right-8 -bottom-8 w-32 h-32 object-contain botanical-accent" src="Decoracion/Flor.jpg">
+<div class="flex items-center gap-3 mb-3 pb-3 border-b border-tertiary/20 relative z-10">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed border border-secondary/30 flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="woman">woman</span>
+</div>
+<div>
+<span class="font-label-md text-[9px] uppercase tracking-widest text-secondary font-bold block">Damas</span>
+<h3 class="font-headline-md text-base text-primary font-medium">Mujeres</h3>
+</div>
+</div>
+<p class="font-body-md text-xs text-on-surface-variant font-light leading-relaxed mb-2 relative z-10">
+          Vestido largo de gala o noche elegante en telas fluidas y sofisticadas.
+        </p>
+<div class="mb-3 relative z-10">
+<span class="font-label-md text-[8px] uppercase tracking-wider text-secondary font-semibold block mb-0.5">Calzado sugerido</span>
+<p class="font-body-md text-[11px] text-outline font-light leading-snug">Tacón ancho, bloque o cuña recomendado especialmente para áreas de jardín y adoquín.</p>
+</div>
+<div class="bg-[#FFFFFF] rounded-lg p-3 border border-tertiary/30 relative z-10">
+<span class="font-label-md text-[9px] uppercase tracking-widest text-secondary font-semibold block text-center mb-2.5">
+            Paleta sugerida para damas
+          </span>
+<div class="grid grid-cols-5 gap-1.5 text-center">
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#6F7B58] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Salvia</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#A2B984] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Matcha</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#9b5b48] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Terracota</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#d8a48f] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Rosa Palo</span>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-7 h-7 rounded-full bg-[#dfcfb8] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Arena</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Nota de Cortesía / Novia -->
+<div class="bg-[#FAF8F2] rounded-lg p-3 text-center border-l-2 border-secondary flex items-center gap-2.5 relative z-10">
+<span class="material-symbols-outlined text-secondary text-[20px] flex-shrink-0" data-icon="favorite">favorite</span>
+<p class="font-headline-md italic text-xs text-primary leading-relaxed font-light text-left">
+          Nota de cortesía: «Nos reservamos con todo cariño los tonos blanco, marfil, perla, crema y beige exclusivamente para la novia.»
+        </p>
+</div>
+</div>
 </section>
 
-        <!-- GALERÍA DE FOTOS (CARRUSEL SIN CLIC) -->
-<section class="px-4 py-11">
-    <div class="text-center mb-6">
-        <span class="text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Recuerdos</span>
-        <h2 class="font-serif text-2xl text-primary mt-1">Nuestra Galería</h2>
-        <p class="text-xs text-outline font-light mt-1">Momentos especiales</p>
-    </div>
-    
-    <div class="grid grid-cols-2 gap-3">
-        <!-- Foto 1 (Grande vertical - Izquierda) -->
-        <div class="col-span-1 row-span-2 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative h-full carousel-container" data-interval="6000">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwL6EyD5AwEsIFwwtZQ5a_-us5XzvlbdljFBXtHANwRnCosNkDRgIRmmiPFcX0ABcAohp0rG_W9ws9jAA_05yID8ZPoYp8Xg1LiIwPlbm5DpshcUnR0hKaaw4CSWJBxqkst0lWBwZKR58XsbbsEXgtoKylq4F989uwezxG7tALB9yrQPLBF6r4WaRzGDrCiXF9PyPToR2To_7zbMhf722fi0_uFf6v8kYn6uZ37IS0RVLoaEXGi0vJ4Q" alt="Foto 1A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5kjr2g_iTIw9HNPfA5hfQaj1dXoIu3lZg9aDR8YfIOEgnH3shQXkKYOdkMZx-TXu8bt8H0IMnQHGWBCinuY-2XoHDqoF7-kLJawBFsAGJbhrd3hAJRKDjldMpNLn_y4djL3rG8OQmT8YeVE-LFx3FsGIuK11FZFdgKd3UVepzwGOphp4Yt3Vh0OF3C0iIYKZy3ckZ4XRjmc8M5R7CMOAIsFaAPa03veJDvRk6cJl2EkH0CwO6AD8-fg" alt="Foto 1B">
+<!-- GALERÍA DE FOTOS (6 espacios, cada uno con carrusel de 2 imágenes) -->
+    <section class="px-margin py-space-xl">
+      <div class="text-center mb-6">
+        <span class="font-label-md text-xs uppercase tracking-[0.25em] text-secondary font-semibold">Recuerdos</span>
+        <h2 class="font-headline-lg-mobile text-2xl text-primary mt-1">Nuestra Galería</h2>
+        <p class="text-xs text-outline font-light mt-1">Toca cualquier fotografía para ampliar</p>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+
+        <!-- Foto 1 (Grande vertical izquierda - Abarca 2 filas) -->
+        <div class="col-span-1 row-span-2 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Retrato íntimo')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen.jpg" alt="Foto 1A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen1.jpg" alt="Foto 1B">
         </div>
 
         <!-- Foto 2 (Superior derecha) -->
-        <div class="col-span-1 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative aspect-[4/3] carousel-container" data-interval="6500">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5kjr2g_iTIw9HNPfA5hfQaj1dXoIu3lZg9aDR8YfIOEgnH3shQXkKYOdkMZx-TXu8bt8H0IMnQHGWBCinuY-2XoHDqoF7-kLJawBFsAGJbhrd3hAJRKDjldMpNLn_y4djL3rG8OQmT8YeVE-LFx3FsGIuK11FZFdgKd3UVepzwGOphp4Yt3Vh0OF3C0iIYKZy3ckZ4XRjmc8M5R7CMOAIsFaAPa03veJDvRk6cJl2EkH0CwO6AD8-fg" alt="Foto 2A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwL6EyD5AwEsIFwwtZQ5a_-us5XzvlbdljFBXtHANwRnCosNkDRgIRmmiPFcX0ABcAohp0rG_W9ws9jAA_05yID8ZPoYp8Xg1LiIwPlbm5DpshcUnR0hKaaw4CSWJBxqkst0lWBwZKR58XsbbsEXgtoKylq4F989uwezxG7tALB9yrQPLBF6r4WaRzGDrCiXF9PyPToR2To_7zbMhf722fi0_uFf6v8kYn6uZ37IS0RVLoaEXGi0vJ4Q" alt="Foto 2B">
+        <div class="col-span-1 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[4/3] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Caminata')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen2.jpg" alt="Foto 2A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen3.jpg" alt="Foto 2B">
         </div>
 
         <!-- Foto 3 (Media derecha) -->
-        <div class="col-span-1 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative aspect-[4/3] carousel-container" data-interval="7000">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJB0cs2tmo-3uF9VrW-_e2guYYESkeI-HtuAyGF1e2XxUEC94G6YpHqMSVai6vu5JgBVAmwrMdZsBJdJJR3mxJhj7BgThHgrVwmWvL-hLr9dK2O5qg8H28IHaFkytcFNGt7T52Mlqe8qGcdW0a3KzTzj36HHFYE0XE3tL1iQHL0TU2Rw3bbu0YkH3x4pATcmAwNEG9D1JB008HaNS6e-FGIwgIfuvsjZ5aVf8DYoK0vYZjqhOFrf2uCw" alt="Foto 3A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASGAONByPutH8NlrKHzFs80X042v_awuxSG0RlsAcxPwQc7RTttsMTYFLFu0Baiz1sBiex7njGRxWL3S2Vixxzv-bJAacgsluuuuOiSKhZ5qE7_Kj0HtQhfZbIaxFdDcvxfPu8r_LXnUoOO1py8PMGrdNvy2l4PDDaQNhuinEgr49HQCtm4xOqKyTLiE349gAPaRBfA9kEBGkUDuCCUtGO654atEJINDf-eNQdDV8h6oOTeovup2gfaQ" alt="Foto 3B">
+        <div class="col-span-1 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[4/3] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Detalle')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen4.jpg" alt="Foto 3A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen5.jpg" alt="Foto 3B">
         </div>
 
-        <!-- Foto 4 (Ancha central) -->
-        <div class="col-span-2 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative aspect-[16/9] carousel-container" data-interval="6000">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcKFZ_0jSSUxE3bDvhUbft1goYL8h3w_bDBzcJF1JO1uZGZj4QancZIlPX4wDEzNcpOzvTVF1oDRwUd5BVFQQgeR0tR0N66u1rW29BJJ5VP4LCJwTzSmQ-UUosZm4FGX8DNPICk8mT3GUsnGiotr4AUrPc_b-Q9LIjayxeJ4GwC1fh3-aps8P_tZauuTeqhOSu4yiJmA7bTLOsqBbc5M6gQ9UlL83fTsI2U-rUr-ERvoz4VUkL3Q4Pow" alt="Foto 4A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAydVK4Ws9bF__telUZqUOTGeLf4VzRPBvMIA7smFSMCwPp88IwNYbAnCXFzyjlh93vP-AzRXnqqsd5zbXDbTgepW2MdX1vAoaueMGTXB90bILgRUneL4f7lIH1iNuoa9r3W-yEIJF1buKtrs049o5wfhrHJs_yc-NQOSYLc7JFYHSObN336YGc-oS0DWAc-u27bKgnIsOb72tliiQLaZTg6W6u7PedEw-EDXgT0sJ6SYCJ_b45NVImHw" alt="Foto 4B">
+        <!-- Foto 4 (Ancha central / Span completo de 2 columnas) -->
+        <div class="col-span-2 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[16/9] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Atardecer')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen6.jpg" alt="Foto 4A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen7.jpg" alt="Foto 4B">
         </div>
 
         <!-- Foto 5 (Inferior izquierda) -->
-        <div class="col-span-1 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative aspect-[4/4] carousel-container" data-interval="6500">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAydVK4Ws9bF__telUZqUOTGeLf4VzRPBvMIA7smFSMCwPp88IwNYbAnCXFzyjlh93vP-AzRXnqqsd5zbXDbTgepW2MdX1vAoaueMGTXB90bILgRUneL4f7lIH1iNuoa9r3W-yEIJF1buKtrs049o5wfhrHJs_yc-NQOSYLc7JFYHSObN336YGc-oS0DWAc-u27bKgnIsOb72tliiQLaZTg6W6u7PedEw-EDXgT0sJ6SYCJ_b45NVImHw" alt="Foto 5A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwL6EyD5AwEsIFwwtZQ5a_-us5XzvlbdljFBXtHANwRnCosNkDRgIRmmiPFcX0ABcAohp0rG_W9ws9jAA_05yID8ZPoYp8Xg1LiIwPlbm5DpshcUnR0hKaaw4CSWJBxqkst0lWBwZKR58XsbbsEXgtoKylq4F989uwezxG7tALB9yrQPLBF6r4WaRzGDrCiXF9PyPToR2To_7zbMhf722fi0_uFf6v8kYn6uZ37IS0RVLoaEXGi0vJ4Q" alt="Foto 5B">
+        <div class="col-span-1 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[4/4] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Miradas')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen3.jpg" alt="Foto 5A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen6.jpg" alt="Foto 5B">
         </div>
 
         <!-- Foto 6 (Inferior derecha) -->
-        <div class="col-span-1 rounded-xl overflow-hidden gold-foil-border parchment-shadow relative aspect-[4/4] carousel-container" data-interval="7000">
-            <img class="carousel-img active" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASGAONByPutH8NlrKHzFs80X042v_awuxSG0RlsAcxPwQc7RTttsMTYFLFu0Baiz1sBiex7njGRxWL3S2Vixxzv-bJAacgsluuuuOiSKhZ5qE7_Kj0HtQhfZbIaxFdDcvxfPu8r_LXnUoOO1py8PMGrdNvy2l4PDDaQNhuinEgr49HQCtm4xOqKyTLiE349gAPaRBfA9kEBGkUDuCCUtGO654atEJINDf-eNQdDV8h6oOTeovup2gfaQ" alt="Foto 6A">
-            <img class="carousel-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJB0cs2tmo-3uF9VrW-_e2guYYESkeI-HtuAyGF1e2XxUEC94G6YpHqMSVai6vu5JgBVAmwrMdZsBJdJJR3mxJhj7BgThHgrVwmWvL-hLr9dK2O5qg8H28IHaFkytcFNGt7T52Mlqe8qGcdW0a3KzTzj36HHFYE0XE3tL1iQHL0TU2Rw3bbu0YkH3x4pATcmAwNEG9D1JB008HaNS6e-FGIwgIfuvsjZ5aVf8DYoK0vYZjqhOFrf2uCw" alt="Foto 6B">
+        <div class="col-span-1 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[4/4] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Brindis')">
+          <img class="w-full h-full object-cover carousel-img active absolute inset-0 opacity-100 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen.jpg" alt="Foto 6A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen5.jpg" alt="Foto 6B">
         </div>
-    </div>
-</section>
 
-        <!-- MESA DE REGALOS -->
-        <section class="px-4 py-8 bg-surface-container-low/50 border-t border-outline-variant/30" id="mesa-regalos">
-            <div class="text-center mb-6">
-                <span class="material-symbols-outlined text-secondary text-2xl">card_giftcard</span>
-                <h2 class="font-serif text-2xl text-primary mt-1">Mesa de Regalos</h2>
-                <div class="w-8 h-[1px] bg-secondary mx-auto mt-2 mb-3"></div>
-                <p class="text-sm text-on-surface-variant font-light max-w-xs mx-auto">
-                    Su presencia es nuestro mejor regalo, pero si desean tener un detalle adicional:
-                </p>
-            </div>
-            <div class="bg-surface rounded-xl p-5 border border-secondary/20 shadow-sm">
-                <div class="flex justify-between items-center pb-3 border-b border-outline-variant/30">
-                    <div>
-                        <span class="text-[10px] uppercase tracking-wider text-outline">Transferencia Bancaria</span>
-                        <h3 class="font-serif text-base text-primary font-medium">BBVA México</h3>
-                    </div>
-                    <span class="material-symbols-outlined text-secondary text-2xl">account_balance</span>
-                </div>
-                <div class="py-3 space-y-2 text-sm">
-                    <div>
-                        <span class="text-[9px] uppercase tracking-wider text-outline block">Beneficiarios</span>
-                        <span class="font-medium text-primary">Sofía Morales / Mateo Silva</span>
-                    </div>
-                    <div>
-                        <span class="text-[9px] uppercase tracking-wider text-outline block">CLABE Interbancaria</span>
-                        <span class="font-mono text-[15px] font-semibold tracking-wider text-primary" id="clabeNumber">012180015678945612</span>
-                    </div>
-                </div>
-                <button class="w-full py-2.5 px-4 bg-primary text-surface rounded-lg text-xs uppercase tracking-widest flex items-center justify-center gap-2 hover:bg-primary-container transition-all" onclick="copyClabe()">
-                    <span class="material-symbols-outlined text-[16px]">content_copy</span>
-                    Copiar CLABE
-                </button>
-            </div>
-        </section>
+      </div>
+    </section>
 
-        <!-- Sección RSVP (Confirmación) -->
-<section id="rsvp" class="py-16 px-6 max-w-xl mx-auto text-center">
-  <h2 class="text-3xl font-serif mb-2 text-gray-800">Confirmación de Asistencia</h2>
-  <p class="text-gray-600 mb-8">Por favor confirma tu asistencia antes del 15 de Octubre.</p>
-
-  <form id="rsvp-form" class="space-y-4 text-left bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-    <div>
-      <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo *</label>
-      <input type="text" id="nombre" required placeholder="Ej. Ana García" 
-             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition">
-    </div>
-
-    <div>
-      <label for="asistencia" class="block text-sm font-medium text-gray-700 mb-1">¿Nos acompañarás? *</label>
-      <select id="asistencia" required 
-              class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition bg-white">
-        <option value="Sí, con gusto ahí estaré(mos)">¡Sí, con gusto ahí estaré!</option>
-        <option value="Lamentablemente no podré asistir">Lamentablemente no podré asistir</option>
-      </select>
-    </div>
-
-    <div>
-      <label for="pases" class="block text-sm font-medium text-gray-700 mb-1">Número de Asistentes</label>
-      <input type="number" id="pases" min="1" max="5" value="1" 
-             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition">
-    </div>
-
-    <div>
-      <label for="mensaje" class="block text-sm font-medium text-gray-700 mb-1">Alergias o mensaje para los novios (Opcional)</label>
-      <textarea id="mensaje" rows="3" placeholder="Ej. Vegetariano / ¡Muchas felicidades!" 
-                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none transition"></textarea>
-    </div>
-
-    <button type="submit" 
-            class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-3 px-6 rounded-lg transition duration-200 flex items-center justify-center gap-2">
-      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-      </svg>
-      Enviar Confirmación por WhatsApp
-    </button>
-  </form>
-</section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="px-4 py-8 text-center bg-surface-container border-t border-outline-variant/30">
-        <span class="material-symbols-outlined text-secondary text-2xl mb-2">local_florist</span>
-        <h4 class="font-serif text-lg text-primary font-medium">Sofía & Mateo</h4>
-        <p class="text-xs text-outline font-light mt-1 mb-3">Hecho con amor para nuestro gran día.</p>
-        <span class="text-[10px] uppercase tracking-[0.2em] text-secondary font-semibold">#BodaSofiaYMateo</span>
-    </footer>
+<!-- MESA DE REGALOS & DATOS BANCARIOS -->
+<section class="px-margin py-space-xl bg-[#FAF8F2] border-t border-tertiary/30 relative overflow-hidden" id="mesa-regalos">
+<div class="absolute -right-10 top-0 w-36 h-auto botanical-accent z-0 scale-x-[-1]">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor1.jpg">
+</div>
+<div class="absolute -left-10 -bottom-8 w-36 h-auto botanical-accent z-0">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="text-center mb-6 relative z-10">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="card_giftcard">card_giftcard</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Mesa de Regalos</h2>
+<div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 mb-3"></div>
+<p class="font-body-md text-sm text-on-surface-variant font-light max-w-xs mx-auto">
+        El mejor regalo es contar con tu presencia y cariño, pero si deseas hacernos un detalle para nuestro nuevo hogar o luna de miel:
+      </p>
 </div>
 
+<!-- Tarjeta Bancaria -->
+<div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm relative overflow-hidden">
+<img alt="" class="absolute -right-10 -bottom-10 w-40 h-40 object-contain botanical-accent" src="Decoracion/Flor.jpg">
+<div class="flex justify-between items-center pb-3 border-b border-tertiary/30 relative z-10">
+<div>
+<span class="font-label-md text-[10px] uppercase tracking-wider text-outline">Transferencia Bancaria</span>
+<h3 class="font-headline-md text-base text-primary font-medium">BBVA México</h3>
+</div>
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="account_balance">account_balance</span>
+</div>
+<div class="py-3 space-y-2 text-sm relative z-10">
+<div>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline block">Beneficiarios</span>
+<span class="font-medium text-primary">Rubén &amp; Yareli</span>
+</div>
+<div>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline block">CLABE Interbancaria</span>
+<span class="font-mono text-[15px] font-semibold tracking-wider text-primary" id="clabeNumber">000000000000000000</span>
+</div>
+</div>
+<button class="w-full py-2.5 px-4 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all relative z-10" onclick="copyClabe()">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="content_copy">content_copy</span>
+        <span class="">Copiar CLABE</span>
+      </button>
+</div>
+</section>
+
+<!-- CONFIRMACIÓN DE ASISTENCIA (RSVP) -->
+<section class="px-margin py-space-xl relative overflow-hidden" id="rsvp">
+<div class="absolute -right-8 top-10 w-32 h-auto botanical-accent z-0 scale-x-[-1]">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor1.jpg">
+</div>
+<div class="absolute -left-8 -bottom-6 w-36 h-auto botanical-accent z-0">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="text-center mb-6 relative z-10">
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">RSVP</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Confirma tu asistencia</h2>
+<div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 mb-2"></div>
+<p class="font-body-md text-xs text-on-surface-variant font-light">Menciona el código <b class="">BODARUBENYYARELI</b> al reservar</p>
+</div>
+<form class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm space-y-4 relative overflow-hidden" id="rsvpForm" onsubmit="handleRsvpSubmit(event)">
+<div class="absolute -top-6 -right-6 w-32 h-32 botanical-accent z-0">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="absolute -bottom-6 -left-6 w-32 h-32 botanical-accent z-0 rotate-180">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="relative z-10">
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Nombre completo</label>
+<input class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestName" placeholder="Ej. Familia González Morales" required="" type="text">
+</div>
+<div class="grid grid-cols-2 gap-3 relative z-10">
+<div>
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">¿Asistirás?</label>
+<select class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="attendanceStatus">
+<option value="¡Sí, asistiré con gusto!">Sí, con gusto</option>
+<option value="Lo siento, no podré asistir">No podré asistir</option>
+</select>
+</div>
+<div>
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Pases (máximo 3)</label>
+<select class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="guestCount">
+<option value="1 persona">1 persona (tú)</option>
+<option selected="" value="2 personas">2 personas (tú + 1 acompañante)</option>
+<option value="3 personas">3 personas (tú + 2 acompañantes)</option>
+</select>
+</div>
+</div>
+<div class="relative z-10">
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Mensaje para los novios (opcional)</label>
+<textarea class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestMessage" placeholder="¡Felicidades, nos vemos pronto!" rows="2"></textarea>
+</div>
+<button class="w-full py-3.5 px-6 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2.5 hover:bg-primary-container active:scale-95 transition-all shadow-md relative z-10" type="submit">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="send">send</span>
+        <span class="">Confirmar por WhatsApp</span>
+      </button>
+</form>
+</section>
+
+<!-- RECOMENDADOR DE MÚSICA -->
+<section class="px-margin py-space-lg bg-[#FAF8F2] border-t border-tertiary/30 relative overflow-hidden">
+<div class="absolute -left-8 top-0 w-28 h-auto botanical-accent z-0">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor1.jpg">
+</div>
+<div class="text-center mb-4 relative z-10">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="queue_music">queue_music</span>
+<h3 class="font-headline-md text-lg text-primary">¿Qué canción no puede faltar?</h3>
+<p class="font-body-md text-xs text-outline font-light">Escribe una canción y su artista para sugerirla para nuestra fiesta.</p>
+</div>
+<form class="flex gap-2 relative z-10" id="songForm" onsubmit="handleSongSubmit(event)">
+<input class="flex-1 bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songInput" placeholder="Canción y artista..." required="" type="text">
+<button class="px-4 py-2 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="submit">
+        Sugerir
+      </button>
+</form>
+<p class="text-center text-xs text-primary font-medium mt-2 hidden relative z-10" id="songFeedback">¡Gracias! Hemos anotado tu canción 🎶</p>
+</section>
+
+<!-- HOSPEDAJE RECOMENDADO -->
+<section class="px-margin py-space-xl relative overflow-hidden">
+<div class="absolute -right-8 top-6 w-32 h-auto botanical-accent z-0 scale-x-[-1]">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor1.jpg">
+</div>
+<div class="text-center mb-6 relative z-10">
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Hospedaje</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Hoteles con convenio</h2>
+<div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 mb-2"></div>
+<p class="font-body-md text-xs text-on-surface-variant font-light">
+        Menciona el código <b>BODARUBENYYARELI</b> al reservar
+      </p>
+</div>
+<div class="space-y-3 relative z-10">
+<div class="bg-[#FFFFFF] rounded-xl p-4 border border-secondary/30 flex justify-between items-center shadow-sm">
+<div>
+<h4 class="font-headline-md text-sm text-primary font-medium">Hotel Grand Fiesta Americana</h4>
+<p class="text-xs text-outline font-light">A 10 min de la recepción</p>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-bold">15% Descuento</span>
+</div>
+</div>
+<div class="bg-[#FFFFFF] rounded-xl p-4 border border-secondary/30 flex justify-between items-center shadow-sm">
+<div>
+<h4 class="font-headline-md text-sm text-primary font-medium">Hotel boutique La Casa del Atrio</h4>
+<p class="text-xs text-outline font-light">En el Centro Histórico (cerca de parroquia)</p>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-bold">Tarifa Especial</span>
+</div>
+</div>
+</div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES (FAQ) -->
+<section class="px-margin pb-space-xl relative overflow-hidden">
+<div class="absolute -left-10 top-4 w-36 h-auto botanical-accent z-0">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor1.jpg">
+</div>
+<div class="absolute -right-8 bottom-0 w-32 h-auto botanical-accent z-0 scale-x-[-1]">
+<img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="text-center mb-6 relative z-10">
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Dudas</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Preguntas Frecuentes</h2>
+<div class="w-8 h-[1px] bg-tertiary mx-auto mt-2"></div>
+</div>
+<div class="space-y-3 relative z-10">
+
+<!-- Item 1 -->
+<details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
+<span class="">¿Habrá recepción de niños?</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
+          Amamos a sus pequeños, sin embargo, nuestra boda será un evento exclusivamente para adultos. Esperamos que puedan disfrutar de una noche de fiesta y descanso con nosotros.
+        </div>
+</details>
+
+<!-- Item 2 -->
+<details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
+<span class="">¿Habrá transporte entre la iglesia y la hacienda?</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
+          Sí, contaremos con camionetas tipo van saliendo del atrio de la parroquia a las 17:45 hrs hacia la hacienda, y regresos continuos a partir de la medianoche.
+        </div>
+</details>
+
+<!-- Item 3 -->
+<details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
+<summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
+<span class="">¿Hay estacionamiento y valet parking?</span>
+<span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
+          Ambos recintos cuentan con servicio de estacionamiento y valet parking para tu comodidad y seguridad.
+        </div>
+</details>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="relative px-margin py-8 text-center bg-[#FAF8F2] border-t border-tertiary/30 overflow-hidden">
+<div class="absolute -left-8 -bottom-8 w-36 h-36 botanical-accent z-0">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<div class="absolute -right-8 -bottom-8 w-36 h-36 botanical-accent z-0 scale-x-[-1]">
+<img alt="" class="w-full h-full object-contain" src="Decoracion/Flor2.jpg">
+</div>
+<span class="material-symbols-outlined text-secondary text-2xl mb-2 relative z-10" data-icon="local_florist">local_florist</span>
+<h4 class="font-headline-md text-lg text-primary font-medium relative z-10">Rubén &amp; Yareli</h4>
+<p class="font-body-md text-xs text-outline font-light mt-1 mb-3 relative z-10">
+      Hecho con amor para nuestro gran día.
+    </p>
+<span class="font-label-md text-[10px] uppercase tracking-[0.2em] text-secondary font-semibold relative z-10">#BODARUBENYYARELI</span>
+</footer>
+</main>
+
 <!-- TOAST NOTIFICATION -->
-<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-primary text-surface px-4 py-2.5 rounded-full shadow-lg text-xs font-medium flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300" id="toastNotification">
-    <span class="material-symbols-outlined text-sm text-secondary-fixed">check_circle</span>
-    <span id="toastMessage">¡Copiado!</span>
+<div class="fixed bottom-20 left-1/2 -translate-x-1/2 z-50 bg-primary text-white px-4 py-2.5 rounded-full shadow-lg text-xs font-medium flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300" id="toastNotification">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="check_circle">check_circle</span>
+<span id="toastMessage" class="">¡Copiado al portapapeles!</span>
 </div>
 
 <!-- ITINERARIO MODAL -->
-<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="itineraryModal" onclick="closeItineraryModal()">
-    <div class="relative max-w-sm w-full bg-surface rounded-2xl border border-secondary/30 shadow-xl overflow-hidden max-h-[90vh] flex flex-col" onclick="event.stopPropagation()">
-        <div class="px-5 py-4 border-b border-outline-variant/30 flex items-center justify-between bg-surface-container-low">
-            <h3 class="font-serif text-base text-primary font-medium">Programa del Gran Día</h3>
-            <button class="w-8 h-8 rounded-full bg-surface flex items-center justify-center text-outline hover:text-primary border border-outline-variant/30" onclick="closeItineraryModal()">
-                <span class="material-symbols-outlined text-[18px]">close</span>
-            </button>
-        </div>
-        <div class="p-5 overflow-y-auto space-y-4 text-xs text-on-surface-variant font-light">
-            <p><b>16:30 hrs</b> - Ceremonia Religiosa</p>
-            <p><b>18:00 hrs</b> - Recepción & Cóctel de Bienvenida</p>
-            <p><b>20:00 hrs</b> - Cena & Banquete Nupcial</p>
-            <p><b>22:00 hrs</b> - Apertura de Pista con DJ</p>
-        </div>
-    </div>
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4 transition-all duration-300" id="itineraryModal" onclick="closeItineraryModal()">
+<div class="relative max-w-sm w-full bg-[#FFFFFF] rounded-2xl border border-secondary/30 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col" onclick="event.stopPropagation()">
+<!-- Header del Modal -->
+<div class="px-5 py-4 border-b border-tertiary/30 flex items-center justify-between bg-[#FAF8F2]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="event_note">event_note</span>
+<div>
+<h3 class="font-headline-md text-base text-primary font-medium leading-tight">Programa del Gran Día</h3>
+<p class="font-label-md text-[9px] uppercase tracking-widest text-secondary">Sábado, 14 de Noviembre de 2026</p>
+</div>
+</div>
+<button aria-label="Cerrar modal" class="w-8 h-8 rounded-full bg-[#FFFFFF] flex items-center justify-center text-outline hover:text-primary border border-tertiary/40 active:scale-95 transition-all" onclick="closeItineraryModal()">
+<span class="material-symbols-outlined text-[18px]" data-icon="close">close</span>
+</button>
 </div>
 
+<!-- Contenido Timeline -->
+<div class="p-5 overflow-y-auto space-y-4">
+<div class="relative pl-6 border-l-2 border-secondary/40 space-y-5">
+<!-- 15:00 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">15:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Ceremonia Religiosa</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Parroquia La Divina Misericordia. Favor de llegar 15 minutos antes.</p>
+</div>
+
+<!-- 18:00 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">18:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Llegada y cóctel de bienvenida</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">MAVA Jardín de eventos. Registro civil, recepción y fiesta.</p>
+</div>
+<!-- 19:30 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">19:30 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Entrada triunfal de los novios y brindis de honor</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Palabras de honor y brindis especial junto a familiares y padrinos.</p>
+</div>
+<!-- 20:00 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">20:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Cena y banquete nupcial</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Cena formal en cuatro tiempos maridada con vinos seleccionados.</p>
+</div>
+<!-- 21:30 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">21:30 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Primer Baile de Esposos (Vals)</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Momento entrañable y apertura simbólica de la velada.</p>
+</div>
+<!-- 22:00 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">22:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Fiesta y apertura de pista con DJ</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Música continua, barra libre premium y celebración en la pista.</p>
+</div>
+<!-- 01:00 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">01:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Trasnochador y antojitos mexicanos</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Estación tradicional de antojitos calientes y tornaboda.</p>
+</div>
+</div>
+</div>
+<!-- Footer del Modal -->
+<div class="p-4 border-t border-tertiary/30 bg-[#FAF8F2]">
+<button class="w-full py-2.5 px-4 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-widest flex items-center justify-center gap-1.5 hover:bg-primary-container active:scale-95 transition-all shadow-sm" onclick="closeItineraryModal()">
+<span class="material-symbols-outlined text-[16px]" data-icon="close">close</span>
+<span class="">Cerrar</span>
+</button>
+</div>
+</div>
+</div>
 <!-- LIGHTBOX MODAL -->
 <div class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm" id="lightboxModal" onclick="closeLightbox()">
-    <div class="relative max-w-sm w-full" onclick="event.stopPropagation()">
-        <img class="w-full h-auto rounded-lg shadow-2xl border border-secondary/30" id="lightboxImg" src="" alt="Ampliada">
-        <p class="text-white/80 font-serif italic text-center text-sm mt-3" id="lightboxCaption"></p>
-    </div>
+<div class="relative max-w-sm w-full" onclick="event.stopPropagation()">
+<button class="absolute -top-10 right-0 text-white flex items-center gap-1 font-label-md text-xs uppercase" onclick="closeLightbox()">
+<span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
+</button>
+<img class="w-full h-auto rounded-lg shadow-2xl border border-secondary/30" data-alt="Expanded view of couple editorial gallery image." id="lightboxImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3Iz6bum16f5JuY1w9bIZ5ms82Mn7Ua9bErI8YhElpSsBxybuH5AnKnZHmohiq9EWHti9JadkYbTFOvgKAYdW79F65D2Yy_P0nf01HXp45SjzULmPSrFnxlyKfhLuKORvH3naQD_U5yGL2lSz7vaCQYnKHBG6rQur6oiiiVD1Yz5oPcuk2lt_MmvgK5kyTH2RPm6_py_3es4WscXKyuhn4wg22WoRx6_yQzu4rRNWxLIqcSdKCMnjyQ">
+<p class="text-white/80 font-headline-md italic text-center text-sm mt-3" id="lightboxCaption"></p>
 </div>
+</div>
+</div>
+<!-- JAVASCRIPT LOGIC -->
+<script>
+    let isPlaying = false;
 
-<!-- ENLACE AL JAVASCRIPT EXTERNO -->
-<script src="main.js"></script>
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const musicIcon = document.getElementById('musicIcon');
+    const musicLabel = document.getElementById('musicLabel');
+    const soundWave = document.getElementById('soundWaveAnim');
+    const backgroundMusic = document.getElementById('backgroundMusic');
+
+    function updateMusicControls(playing) {
+      isPlaying = playing;
+      musicIcon.textContent = playing ? 'pause' : 'music_note';
+      musicLabel.textContent = playing ? 'Sonando' : 'Música';
+      soundWave.classList.toggle('hidden', !playing);
+      soundWave.classList.toggle('flex', playing);
+      musicBtn.classList.toggle('bg-tertiary/20', playing);
+    }
+
+    function startBackgroundMusic(showMessage = false) {
+      backgroundMusic.play().then(() => {
+        updateMusicControls(true);
+        if (showMessage) {
+          showToast("Reproduciendo música de fondo 🎵");
+        }
+      }).catch(() => {
+        updateMusicControls(false);
+      });
+    }
+
+    function toggleMusic() {
+      if (isPlaying) {
+        backgroundMusic.pause();
+        updateMusicControls(false);
+        showToast("Música en pausa");
+      } else {
+        startBackgroundMusic(true);
+      }
+    }
+
+    musicBtn.addEventListener('click', toggleMusic);
+    document.addEventListener('pointerdown', () => {
+      if (!isPlaying) {
+        startBackgroundMusic();
+      }
+    }, { once: true });
+    backgroundMusic.addEventListener('pause', () => updateMusicControls(false));
+    backgroundMusic.addEventListener('play', () => updateMusicControls(true));
+    startBackgroundMusic();
+
+    // Countdown Timer (Nov 14, 2026 15:00:00)
+    const weddingDate = new Date('2026-11-14T15:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-minutes').textContent = '00';
+        document.getElementById('cd-seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = days < 10 ? '0' + days : days;
+      document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
+      document.getElementById('cd-minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('cd-seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function showToast(message) {
+      const toast = document.getElementById('toastNotification');
+      const toastMsg = document.getElementById('toastMessage');
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      toast.classList.add('opacity-100');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100');
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 3000);
+    }
+
+    function copyClabe() {
+      const clabe = document.getElementById('clabeNumber').innerText.trim();
+      navigator.clipboard.writeText(clabe).then(() => {
+        showToast("¡CLABE copiada con éxito!");
+      }).catch(() => {
+        showToast("012180015678945612 copiada");
+      });
+    }
+
+    function openItineraryModal() {
+      const modal = document.getElementById('itineraryModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeItineraryModal() {
+      const modal = document.getElementById('itineraryModal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightboxModal');
+      const img = document.getElementById('lightboxImg');
+      const cap = document.getElementById('lightboxCaption');
+      img.src = src;
+      cap.textContent = caption;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.remove('flex');
+      modal.classList.add('hidden');
+    }
+
+    function initCarousels() {
+      document.querySelectorAll('.carousel-container').forEach((carousel, index) => {
+        const images = Array.from(carousel.querySelectorAll('.carousel-img'));
+        if (images.length < 2) return;
+
+        let activeIndex = images.findIndex((image) => image.classList.contains('active'));
+        if (activeIndex < 0) activeIndex = 0;
+
+        const showNextImage = () => {
+          const nextIndex = (activeIndex + 1) % images.length;
+          images[activeIndex].classList.remove('active', 'opacity-100');
+          images[activeIndex].classList.add('opacity-0');
+          images[nextIndex].classList.remove('opacity-0');
+          images[nextIndex].classList.add('active', 'opacity-100');
+          activeIndex = nextIndex;
+        };
+
+        window.setTimeout(() => {
+          showNextImage();
+          window.setInterval(showNextImage, 6000);
+        }, index * 1000);
+      });
+    }
+
+    initCarousels();
+
+    function handleRsvpSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('guestName').value.trim();
+      const status = document.getElementById('attendanceStatus').value;
+      const count = document.getElementById('guestCount').value;
+      const message = document.getElementById('guestMessage').value.trim();
+
+      const phone = "523222104532";
+      const fullMessage = `¡Hola Rubén & Yareli! 👋💍\n\nConfirmo mi asistencia para su boda:\n• Nombre: ${name}\n• Estado: ${status}\n• Pases: ${count}\n${message ? `• Mensaje: "${message}"\n` : ''}\n      ¡Nos vemos el 14 de noviembre de 2026!`;
+
+      const encoded = encodeURIComponent(fullMessage);
+      const url = `https://api.whatsapp.com/send?phone=${phone}&text=${encoded}`;
+      window.open(url, '_blank');
+    }
+
+    function handleSongSubmit(e) {
+      e.preventDefault();
+      const input = document.getElementById('songInput');
+      const feedback = document.getElementById('songFeedback');
+      if (input.value.trim() !== '') {
+        feedback.classList.remove('hidden');
+        showToast("¡Canción agregada a la lista!");
+        input.value = '';
+        setTimeout(() => feedback.classList.add('hidden'), 4000);
+      }
+    }
+    </script>
 </body>
 </html>
