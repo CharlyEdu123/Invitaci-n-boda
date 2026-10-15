@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -139,6 +140,9 @@
 <audio id="backgroundMusic" loop preload="auto" autoplay>
   <source src="Musica/Rampa, Adam Port, &amp;ME - Crazy For It (SPOTISAVER).mp3" type="audio/mpeg">
 </audio>
+<button class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-full bg-primary text-white shadow-lg font-label-md text-[10px] uppercase tracking-wider" id="musicEnablePrompt" type="button">
+  Toca para activar la música 🎵
+</button>
 
 <!-- CONTENT CANVAS -->
 <main class="pt-16 flex-1">
@@ -182,7 +186,7 @@
 <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
 <div class="absolute bottom-4 left-0 right-0 text-center text-white px-4 z-10">
 <span class="font-label-md text-label-md uppercase tracking-[0.2em] text-[#F7F5ED] drop-shadow">Sábado, 14 de Noviembre de 2026</span>
-<p class="font-headline-md text-lg italic text-[#FAF8F2] drop-shadow">Querétaro, México</p>
+<p class="font-headline-md text-lg italic text-[#FAF8F2] drop-shadow">Puerto Vallarta, México</p>
 </div>
 </div>
 </div>
@@ -272,14 +276,14 @@
 <span class="material-symbols-outlined text-[20px]" data-icon="celebration">celebration</span>
 </div>
 <div>
-<span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">18:00 hrs</span>
-<h3 class="font-headline-md text-lg text-primary leading-tight font-medium">Registro civil, recepción y fiesta</h3>
+<span class="font-label-md text-[10px] uppercase tracking-widest text-secondary font-bold">17:00 hrs</span>
+<h3 class="font-headline-md text-lg text-primary leading-tight font-medium">Recepción para ceremonia del civil</h3>
 </div>
 </div>
 <div class="space-y-1 text-on-surface-variant font-light text-sm mb-4 pl-1 relative z-10">
 <p class="font-medium text-primary">MAVA Jardín de eventos</p>
-<p class="">Ceremonia del registro civil y celebración</p>
-<p class="text-xs text-outline">Recepción, banquete y fiesta</p>
+<p class="">Ceremonia del registro civil</p>
+<p class="text-xs text-outline">Recepción y celebración</p>
 </div>
 <iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.731271155218!2d-105.27634770000002!3d20.6944228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8421472d6fb3a0e5%3A0x82379f2a050c5f70!2sMAVA%20Jard%C3%ADn%20de%20eventos!5e1!3m2!1ses-419!2smx!4v1791964210075!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de MAVA Jardín de eventos"></iframe>
 <div class="pt-2 border-t border-tertiary/30 relative z-10">
@@ -287,7 +291,6 @@
 <span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
 <span class="">Ver en Google Maps</span>
 </a>
-</div>
 </div>
 </div>
 </section>
@@ -314,21 +317,16 @@
 <div class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm space-y-4 relative overflow-hidden">
 <img alt="" class="absolute -right-8 -top-8 w-36 h-36 object-contain botanical-accent" src="Decoracion/Flor.jpg">
 <!-- Mini Preview Timeline -->
-<div class="grid grid-cols-3 gap-2.5 text-center pb-2 border-b border-tertiary/30 relative z-10">
+<div class="grid grid-cols-2 gap-2.5 text-center pb-2 border-b border-tertiary/30 relative z-10">
 <div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
 <span class="font-label-md text-[10px] text-secondary font-bold block">15:00 hrs</span>
 <span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="church">church</span>
 <p class="font-headline-md text-xs text-primary font-medium leading-tight">Ceremonia</p>
 </div>
 <div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
-<span class="font-label-md text-[10px] text-secondary font-bold block">18:00 hrs</span>
-<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="local_bar">local_bar</span>
-<p class="font-headline-md text-xs text-primary font-medium leading-tight">Cóctel</p>
-</div>
-<div class="p-2.5 rounded-lg bg-[#FAF8F2] border border-tertiary/30">
-<span class="font-label-md text-[10px] text-secondary font-bold block">20:00 hrs</span>
-<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="restaurant">restaurant</span>
-<p class="font-headline-md text-xs text-primary font-medium leading-tight">Banquete</p>
+<span class="font-label-md text-[10px] text-secondary font-bold block">17:00 hrs</span>
+<span class="material-symbols-outlined text-primary text-[18px] my-1" data-icon="celebration">celebration</span>
+<p class="font-headline-md text-xs text-primary font-medium leading-tight">Recepción civil</p>
 </div>
 </div>
 <p class="font-body-md text-xs text-outline font-light text-center leading-relaxed relative z-10">
@@ -367,7 +365,7 @@
 </div>
 </div>
 <p class="font-body-md text-xs text-on-surface-variant font-light leading-relaxed mb-3">
-          Traje formal oscuro, esmoquin clásico o traje sastre con corbata o pajarita/moño, acompañado de zapato formal de vestir y camisa de puño clásico.
+          Traje formal en tonos oscuros, arena o café caqui, esmoquin clásico o traje sastre con corbata o pajarita/moño, acompañado de zapato formal de vestir y camisa de puño clásico.
         </p>
 <div class="bg-[#FFFFFF] rounded-lg p-3 border border-tertiary/30">
 <span class="font-label-md text-[9px] uppercase tracking-widest text-secondary font-semibold block text-center mb-2.5">
@@ -379,8 +377,8 @@
 <span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Azul Noche</span>
 </div>
 <div class="flex flex-col items-center gap-1">
-<div class="w-7 h-7 rounded-full bg-[#334155] shadow-sm border border-black/10"></div>
-<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Carbón</span>
+<div class="w-7 h-7 rounded-full bg-[#A68A64] shadow-sm border border-black/10"></div>
+<span class="font-label-md text-[8px] uppercase tracking-wider text-outline leading-tight">Café caqui</span>
 </div>
 <div class="flex flex-col items-center gap-1">
 <div class="w-7 h-7 rounded-full bg-[#2F3E27] shadow-sm border border-black/10"></div>
@@ -552,10 +550,9 @@
 <img alt="" class="w-full h-auto object-contain" src="Decoracion/Flor2.jpg">
 </div>
 <div class="text-center mb-6 relative z-10">
-<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">RSVP</span>
+<span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Asistencia</span>
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Confirma tu asistencia</h2>
 <div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 mb-2"></div>
-<p class="font-body-md text-xs text-on-surface-variant font-light">Menciona el código <b class="">BODARUBENYYARELI</b> al reservar</p>
 </div>
 <form class="bg-[#FFFFFF] rounded-xl p-5 border border-secondary/30 shadow-sm space-y-4 relative overflow-hidden" id="rsvpForm" onsubmit="handleRsvpSubmit(event)">
 <div class="absolute -top-6 -right-6 w-32 h-32 botanical-accent z-0">
@@ -606,13 +603,23 @@
 <h3 class="font-headline-md text-lg text-primary">¿Qué canción no puede faltar?</h3>
 <p class="font-body-md text-xs text-outline font-light">Escribe una canción y su artista para sugerirla para nuestra fiesta.</p>
 </div>
-<form class="flex gap-2 relative z-10" id="songForm" onsubmit="handleSongSubmit(event)">
-<input class="flex-1 bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songInput" placeholder="Canción y artista..." required="" type="text">
-<button class="px-4 py-2 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="submit">
+<form class="space-y-2 relative z-10" id="songForm" onsubmit="handleSongSubmit(event)">
+<div class="grid grid-cols-2 gap-2">
+<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songTitle" placeholder="Título" required="" type="text">
+<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songArtist" placeholder="Artista (opcional)" type="text">
+</div>
+<button class="w-full px-4 py-2 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="submit">
         Sugerir
       </button>
 </form>
 <p class="text-center text-xs text-primary font-medium mt-2 hidden relative z-10" id="songFeedback">¡Gracias! Hemos anotado tu canción 🎶</p>
+<div class="mt-5 relative z-10" aria-live="polite">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-[9px] uppercase tracking-[0.2em] text-secondary font-semibold">Últimas sugerencias</span>
+<span class="flex gap-1" aria-label="Actualización en tiempo real"><i class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></i><i class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse [animation-delay:150ms]"></i><i class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse [animation-delay:300ms]"></i></span>
+</div>
+<div class="space-y-1.5" id="songFeed"><p class="text-xs text-outline font-light">Cargando sugerencias...</p></div>
+</div>
 </section>
 
 <!-- HOSPEDAJE RECOMENDADO -->
@@ -622,26 +629,20 @@
 </div>
 <div class="text-center mb-6 relative z-10">
 <span class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Hospedaje</span>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Hoteles con convenio</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Hospedaje para la tornaboda</h2>
 <div class="w-8 h-[1px] bg-tertiary mx-auto mt-2 mb-2"></div>
-<p class="font-body-md text-xs text-on-surface-variant font-light">
-        Menciona el código <b>BODARUBENYYARELI</b> al reservar
-      </p>
 </div>
 <div class="space-y-3 relative z-10">
-<div class="bg-[#FFFFFF] rounded-xl p-4 border border-secondary/30 flex justify-between items-center shadow-sm">
+<div class="bg-[#FFFFFF] rounded-xl p-4 border border-secondary/30 shadow-sm">
 <div>
-<h4 class="font-headline-md text-sm text-primary font-medium">Hotel Grand Fiesta Americana</h4>
-<p class="text-xs text-outline font-light">A 10 min de la recepción</p>
-<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-bold">15% Descuento</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Hotel Restaurante Bar Arenas</h4>
+<p class="text-xs text-outline font-light">Hotel sede de la tornaboda</p>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-bold">Hospedaje recomendado</span>
 </div>
-</div>
-<div class="bg-[#FFFFFF] rounded-xl p-4 border border-secondary/30 flex justify-between items-center shadow-sm">
-<div>
-<h4 class="font-headline-md text-sm text-primary font-medium">Hotel boutique La Casa del Atrio</h4>
-<p class="text-xs text-outline font-light">En el Centro Histórico (cerca de parroquia)</p>
-<span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-bold">Tarifa Especial</span>
-</div>
+<a class="w-full flex items-center justify-center gap-2 mt-3 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://maps.app.goo.gl/Ay7AfwMa1y4RVfJC9?g_st=awb" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
+<span>Abrir mapa</span>
+</a>
 </div>
 </div>
 </section>
@@ -661,38 +662,39 @@
 </div>
 <div class="space-y-3 relative z-10">
 
-<!-- Item 1 -->
+<!-- Niños -->
 <details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
 <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
-<span class="">¿Habrá recepción de niños?</span>
+<span class="">¿Se admitirán niños?</span>
 <span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
 </summary>
 <div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
-          Amamos a sus pequeños, sin embargo, nuestra boda será un evento exclusivamente para adultos. Esperamos que puedan disfrutar de una noche de fiesta y descanso con nosotros.
+          Amamos profundamente a los pequeños y agradecemos mucho su comprensión. Para que todos puedan disfrutar plenamente de la ceremonia y la celebración, la boda será un evento exclusivo para adultos y no se admitirán niños. Al día siguiente, durante la tornaboda, estaremos felices de recibirlos y compartir con ellos.
         </div>
 </details>
 
-<!-- Item 2 -->
+<!-- Fotografías -->
 <details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
 <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
-<span class="">¿Habrá transporte entre la iglesia y la hacienda?</span>
+<span class="">¿Podemos tomar y compartir fotografías?</span>
 <span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
 </summary>
 <div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
-          Sí, contaremos con camionetas tipo van saliendo del atrio de la parroquia a las 17:45 hrs hacia la hacienda, y regresos continuos a partir de la medianoche.
+          ¡Claro! Nos encantará que capturen y compartan momentos de este día. Durante la ceremonia religiosa les pedimos hacerlo con discreción y sin interrumpir los momentos especiales; en la recepción podrán disfrutar y fotografiarse con toda libertad.
         </div>
 </details>
 
-<!-- Item 3 -->
+<!-- Cambios de asistencia -->
 <details class="group bg-[#FFFFFF] rounded-xl border border-secondary/30 shadow-sm overflow-hidden">
 <summary class="flex justify-between items-center p-4 cursor-pointer list-none text-primary font-medium text-sm">
-<span class="">¿Hay estacionamiento y valet parking?</span>
+<span class="">¿Qué hago si cambia mi asistencia?</span>
 <span class="material-symbols-outlined transition-transform duration-200 group-open:rotate-180 text-secondary" data-icon="expand_more">expand_more</span>
 </summary>
 <div class="px-4 pb-4 text-xs text-on-surface-variant font-light border-t border-tertiary/20 pt-3">
-          Ambos recintos cuentan con servicio de estacionamiento y valet parking para tu comodidad y seguridad.
+          Si después de confirmar necesitas modificar tu respuesta, actualiza tu información mediante el formulario de confirmación o avísanos directamente. Nos ayudará mucho contar con el dato más reciente para recibirte como mereces.
         </div>
 </details>
+
 </div>
 </section>
 
@@ -709,7 +711,7 @@
 <p class="font-body-md text-xs text-outline font-light mt-1 mb-3 relative z-10">
       Hecho con amor para nuestro gran día.
     </p>
-<span class="font-label-md text-[10px] uppercase tracking-[0.2em] text-secondary font-semibold relative z-10">#BODARUBENYYARELI</span>
+<button class="relative z-10 text-[10px] text-outline/70 hover:text-primary transition-colors" id="adminAccessBtn" type="button">Acceso Novios 🔒</button>
 </footer>
 </main>
 
@@ -747,12 +749,12 @@
 <p class="text-xs text-on-surface-variant font-light mt-0.5">Parroquia La Divina Misericordia. Favor de llegar 15 minutos antes.</p>
 </div>
 
-<!-- 18:00 -->
+<!-- 17:00 -->
 <div class="relative">
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
-<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">18:00 hrs</span>
-<h4 class="font-headline-md text-sm text-primary font-medium">Llegada y cóctel de bienvenida</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">MAVA Jardín de eventos. Registro civil, recepción y fiesta.</p>
+<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">17:00 hrs</span>
+<h4 class="font-headline-md text-sm text-primary font-medium">Recepción para ceremonia del civil</h4>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">MAVA Jardín de eventos. Ceremonia del registro civil y celebración.</p>
 </div>
 <!-- 19:30 -->
 <div class="relative">
@@ -760,13 +762,6 @@
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">19:30 hrs</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Entrada triunfal de los novios y brindis de honor</h4>
 <p class="text-xs text-on-surface-variant font-light mt-0.5">Palabras de honor y brindis especial junto a familiares y padrinos.</p>
-</div>
-<!-- 20:00 -->
-<div class="relative">
-<div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
-<span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">20:00 hrs</span>
-<h4 class="font-headline-md text-sm text-primary font-medium">Cena y banquete nupcial</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Cena formal en cuatro tiempos maridada con vinos seleccionados.</p>
 </div>
 <!-- 21:30 -->
 <div class="relative">
@@ -811,15 +806,41 @@
 </div>
 </div>
 </div>
+<!-- PANEL PRIVADO DE ADMINISTRACIÓN -->
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="adminPanel" aria-hidden="true">
+<div class="relative max-w-lg w-full max-h-[90vh] overflow-y-auto bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl" onclick="event.stopPropagation()">
+<div class="sticky top-0 z-10 px-5 py-4 bg-[#FAF8F2] border-b border-tertiary/30 flex items-center justify-between">
+<div><h3 class="font-headline-md text-lg text-primary">Dashboard Editorial</h3></div>
+<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminBtn" type="button" aria-label="Cerrar panel"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="p-5 space-y-5">
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-white rounded-lg border border-tertiary/30 p-3"><strong class="block text-xl text-primary" id="metricPeople">—</strong><span class="text-[9px] uppercase tracking-wider text-outline">Personas confirmadas</span></div>
+<div class="bg-white rounded-lg border border-tertiary/30 p-3"><strong class="block text-xl text-primary" id="metricYes">—</strong><span class="text-[9px] uppercase tracking-wider text-outline">Confirmaciones sí</span></div>
+<div class="bg-white rounded-lg border border-tertiary/30 p-3"><strong class="block text-xl text-primary" id="metricNo">—</strong><span class="text-[9px] uppercase tracking-wider text-outline">Confirmaciones no</span></div>
+</div>
+<section><h4 class="font-headline-md text-base text-primary mb-2">Invitados</h4><div class="space-y-2" id="adminRsvps"><p class="text-xs text-outline">Cargando...</p></div></section>
+<section><h4 class="font-headline-md text-base text-primary mb-2">Canciones sugeridas</h4><div class="space-y-2" id="adminSongs"><p class="text-xs text-outline">Cargando...</p></div></section>
+</div>
+</div>
+</div>
 <!-- JAVASCRIPT LOGIC -->
 <script>
     let isPlaying = false;
+    const SUPABASE_URL = 'https://YOUR-PROJECT.supabase.co';
+    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    const ADMIN_PASSWORD = 'Contraseña123';
+    const supabaseClient = window.supabase && !SUPABASE_URL.includes('YOUR-')
+      ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+      : null;
+    let adminUnlocked = false;
 
     const musicBtn = document.getElementById('musicToggleBtn');
     const musicIcon = document.getElementById('musicIcon');
     const musicLabel = document.getElementById('musicLabel');
     const soundWave = document.getElementById('soundWaveAnim');
     const backgroundMusic = document.getElementById('backgroundMusic');
+    const musicEnablePrompt = document.getElementById('musicEnablePrompt');
 
     function updateMusicControls(playing) {
       isPlaying = playing;
@@ -833,12 +854,19 @@
     function startBackgroundMusic(showMessage = false) {
       backgroundMusic.play().then(() => {
         updateMusicControls(true);
+        musicEnablePrompt.classList.add('hidden');
         if (showMessage) {
           showToast("Reproduciendo música de fondo 🎵");
         }
       }).catch(() => {
         updateMusicControls(false);
+        musicEnablePrompt.classList.remove('hidden');
       });
+    }
+
+    function activateMusicFromGesture() {
+      backgroundMusic.muted = false;
+      startBackgroundMusic();
     }
 
     function toggleMusic() {
@@ -852,10 +880,9 @@
     }
 
     musicBtn.addEventListener('click', toggleMusic);
+    musicEnablePrompt.addEventListener('click', activateMusicFromGesture);
     document.addEventListener('pointerdown', () => {
-      if (!isPlaying) {
-        startBackgroundMusic();
-      }
+      if (!isPlaying) activateMusicFromGesture();
     }, { once: true });
     backgroundMusic.addEventListener('pause', () => updateMusicControls(false));
     backgroundMusic.addEventListener('play', () => updateMusicControls(true));
@@ -967,12 +994,70 @@
 
     initCarousels();
 
-    function handleRsvpSubmit(e) {
+    function escapeHtml(value) {
+      return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+      }[character]));
+    }
+
+    function getGuestCount(value) {
+      const count = Number.parseInt(value, 10);
+      return Number.isFinite(count) ? count : 1;
+    }
+
+    async function loadSongFeed() {
+      const feed = document.getElementById('songFeed');
+      if (!supabaseClient) {
+        feed.innerHTML = '<p class="text-xs text-outline font-light">Las sugerencias estarán disponibles próximamente.</p>';
+        return;
+      }
+
+      const { data, error } = await supabaseClient
+        .from('canciones')
+        .select('titulo, artista, momento, created_at')
+        .order('created_at', { ascending: false })
+        .limit(3);
+      if (error) {
+        console.error('No se pudo cargar el feed de canciones:', error);
+        feed.innerHTML = '<p class="text-xs text-outline font-light">No se pudieron cargar las sugerencias.</p>';
+        return;
+      }
+
+      feed.innerHTML = data.length
+        ? data.map((song) => `<div class="flex items-center justify-between gap-3 bg-white/70 rounded-lg px-3 py-2 border border-tertiary/20"><div class="min-w-0"><p class="text-xs text-primary font-medium truncate">${escapeHtml(song.titulo)} <span class="font-light text-outline">· ${escapeHtml(song.artista)}</span></p>${song.momento ? `<p class="text-[10px] text-secondary uppercase tracking-wider">${escapeHtml(song.momento)}</p>` : ''}</div><span class="material-symbols-outlined text-secondary text-[16px]">music_note</span></div>`).join('')
+        : '<p class="text-xs text-outline font-light">Aún no hay sugerencias. ¡Sé el primero!</p>';
+    }
+
+    function subscribeToSongs() {
+      if (!supabaseClient) return;
+      supabaseClient.channel('canciones-feed')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'canciones' }, loadSongFeed)
+        .subscribe();
+    }
+
+    async function handleRsvpSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('guestName').value.trim();
       const status = document.getElementById('attendanceStatus').value;
       const count = document.getElementById('guestCount').value;
       const message = document.getElementById('guestMessage').value.trim();
+      const guests = getGuestCount(count);
+
+      if (!supabaseClient) {
+        showToast('Configura Supabase antes de confirmar.');
+        return;
+      }
+      const { error } = await supabaseClient.from('asistencias').insert({
+        nombre: name,
+        pases: guests,
+        respuesta: status,
+        mensaje: message || null
+      });
+      if (error) {
+        console.error('No se pudo guardar la confirmación:', error);
+        showToast('No se pudo guardar. Intenta nuevamente.');
+        return;
+      }
 
       const phone = "523222104532";
       const fullMessage = `¡Hola Rubén & Yareli! 👋💍\n\nConfirmo mi asistencia para su boda:\n• Nombre: ${name}\n• Estado: ${status}\n• Pases: ${count}\n${message ? `• Mensaje: "${message}"\n` : ''}\n      ¡Nos vemos el 14 de noviembre de 2026!`;
@@ -982,17 +1067,86 @@
       window.open(url, '_blank');
     }
 
-    function handleSongSubmit(e) {
+    async function handleSongSubmit(e) {
       e.preventDefault();
-      const input = document.getElementById('songInput');
+      const title = document.getElementById('songTitle').value.trim();
+      const artist = document.getElementById('songArtist').value.trim();
       const feedback = document.getElementById('songFeedback');
-      if (input.value.trim() !== '') {
-        feedback.classList.remove('hidden');
-        showToast("¡Canción agregada a la lista!");
-        input.value = '';
-        setTimeout(() => feedback.classList.add('hidden'), 4000);
+      if (!supabaseClient) {
+        showToast('Configura Supabase antes de sugerir.');
+        return;
       }
+      const { error } = await supabaseClient.from('canciones').insert({
+        titulo: title,
+        artista: artist || null,
+        momento: null
+      });
+      if (error) {
+        console.error('No se pudo guardar la canción:', error);
+        showToast('No se pudo guardar. Intenta nuevamente.');
+        return;
+      }
+      feedback.classList.remove('hidden');
+      showToast("¡Canción agregada a la lista!");
+      document.getElementById('songForm').reset();
+      setTimeout(() => feedback.classList.add('hidden'), 4000);
     }
+
+    function setAdminVisibility(isVisible) {
+      const panel = document.getElementById('adminPanel');
+      panel.classList.toggle('hidden', !isVisible);
+      panel.classList.toggle('flex', isVisible);
+      panel.setAttribute('aria-hidden', String(!isVisible));
+      document.body.style.overflow = isVisible ? 'hidden' : '';
+    }
+
+    async function loadAdminDashboard() {
+      if (!supabaseClient) {
+        showToast('Configura Supabase antes de abrir el dashboard.');
+        return;
+      }
+      const [{ data: rsvps, error: rsvpError }, { data: songs, error: songError }] = await Promise.all([
+        supabaseClient.from('asistencias').select('nombre, pases, respuesta, mensaje, created_at').order('created_at', { ascending: false }),
+        supabaseClient.from('canciones').select('titulo, artista, momento, created_at').order('created_at', { ascending: false })
+      ]);
+      if (rsvpError || songError) {
+        console.error('No se pudo cargar el dashboard:', rsvpError || songError);
+        showToast('No se pudo cargar el dashboard.');
+        return;
+      }
+
+      const yes = rsvps.filter((rsvp) => rsvp.respuesta.startsWith('¡Sí')).length;
+      const no = rsvps.filter((rsvp) => !rsvp.respuesta.startsWith('¡Sí')).length;
+      const people = rsvps.filter((rsvp) => rsvp.respuesta.startsWith('¡Sí')).reduce((sum, rsvp) => sum + Number(rsvp.pases || 0), 0);
+      document.getElementById('metricPeople').textContent = people;
+      document.getElementById('metricYes').textContent = yes;
+      document.getElementById('metricNo').textContent = no;
+      document.getElementById('adminRsvps').innerHTML = rsvps.length
+        ? rsvps.map((rsvp) => `<div class="bg-white rounded-lg border border-tertiary/20 p-3"><div class="flex justify-between gap-2"><strong class="text-sm text-primary">${escapeHtml(rsvp.nombre)}</strong><span class="text-[10px] text-secondary uppercase">${escapeHtml(rsvp.respuesta.startsWith('¡Sí') ? 'Sí' : 'No')} · ${escapeHtml(rsvp.pases)} pases</span></div>${rsvp.mensaje ? `<p class="text-xs text-outline mt-1">${escapeHtml(rsvp.mensaje)}</p>` : ''}</div>`).join('')
+        : '<p class="text-xs text-outline">Aún no hay confirmaciones.</p>';
+      document.getElementById('adminSongs').innerHTML = songs.length
+        ? songs.map((song) => `<div class="bg-white rounded-lg border border-tertiary/20 p-3"><strong class="text-sm text-primary">${escapeHtml(song.titulo)}</strong><span class="text-xs text-outline"> · ${escapeHtml(song.artista)}</span>${song.momento ? `<p class="text-[10px] text-secondary uppercase tracking-wider mt-1">${escapeHtml(song.momento)}</p>` : ''}</div>`).join('')
+        : '<p class="text-xs text-outline">Aún no hay canciones.</p>';
+    }
+
+    document.getElementById('adminAccessBtn').addEventListener('click', async () => {
+      if (!adminUnlocked) {
+        const password = window.prompt('Contraseña de los novios:');
+        if (password !== ADMIN_PASSWORD) {
+          showToast('Contraseña incorrecta.');
+          return;
+        }
+        adminUnlocked = true;
+      }
+      setAdminVisibility(true);
+      await loadAdminDashboard();
+    });
+    document.getElementById('closeAdminBtn').addEventListener('click', () => setAdminVisibility(false));
+    document.getElementById('adminPanel').addEventListener('click', (event) => {
+      if (event.target.id === 'adminPanel') setAdminVisibility(false);
+    });
+    loadSongFeed();
+    subscribeToSongs();
     </script>
 </body>
 </html>
