@@ -261,9 +261,9 @@
 <p class="">Misa a las 3:00 PM</p>
 <p class="text-xs text-outline">Iglesia</p>
 </div>
-<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2215.782470760733!2d-105.26991840000001!3d20.7165519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842146f450af0867%3A0x827ff0a51b58670f!2sParroquia%20La%20Divina%20Misericordia!5e1!3m2!1ses-419!2smx!4v1791964085024!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la Parroquia La Divina Misericordia"></iframe>
+<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3245.9269527810734!2d-105.26991840000001!3d20.7165519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842146f450af0867%3A0x827ff0a51b58670f!2sParroquia%20La%20Divina%20Misericordia!5e1!3m2!1ses-419!2smx!4v1792174068717!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de la Parroquia La Divina Misericordia"></iframe>
 <div class="pt-2 border-t border-tertiary/30 relative z-10">
-<a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://www.google.com/maps/search/?api=1&query=Parroquia%20La%20Divina%20Misericordia" rel="noopener noreferrer" target="_blank">
+<a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://maps.app.goo.gl/HbxnUfmEYSa8nhgf9" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
 <span class="">Ver en Google Maps</span>
 </a>
@@ -286,7 +286,7 @@
 <p class="">Ceremonia del registro civil</p>
 <p class="text-xs text-outline">Recepción y celebración</p>
 </div>
-<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.731271155218!2d-105.27634770000002!3d20.6944228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8421472d6fb3a0e5%3A0x82379f2a050c5f70!2sMAVA%20Jard%C3%ADn%20de%20eventos!5e1!3m2!1ses-419!2smx!4v1791964210075!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de MAVA Jardín de eventos"></iframe>
+<iframe class="w-full h-48 rounded-lg border-0 mb-4 relative z-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3246.4008433304934!2d-105.27634770000002!3d20.6944228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8421472d6fb3a0e5%3A0x82379f2a050c5f70!2sMAVA%20Jard%C3%ADn%20de%20eventos!5e1!3m2!1ses-419!2smx!4v1792174098796!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Mapa de MAVA Jardín de eventos"></iframe>
 <div class="pt-2 border-t border-tertiary/30 relative z-10">
 <a class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg bg-primary text-white font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" href="https://www.google.com/maps/search/?api=1&query=MAVA%20Jard%C3%ADn%20de%20eventos" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-[17px] text-white" data-icon="map">map</span>
@@ -527,7 +527,8 @@
 </button>
 <p class="text-xs text-outline text-center mt-3" id="guestPhotoStatus">El espacio se abrirá cuando el contador llegue a cero.</p>
 </div>
-<div class="grid grid-cols-2 gap-3 mt-5 relative z-10" id="guestAlbumGrid"></div>
+<div class="hidden grid grid-cols-2 gap-3 mt-5 relative z-10" id="guestAlbumGrid"></div>
+<button class="hidden mx-auto mt-4 px-4 py-2 rounded-full border border-secondary/40 text-secondary font-label-md text-[10px] uppercase tracking-wider hover:bg-secondary-fixed/30 transition-colors" id="guestAlbumToggleBtn" type="button">Ver todas las fotos</button>
 </section>
 
 <!-- MESA DE REGALOS & DATOS BANCARIOS -->
@@ -560,11 +561,11 @@
 <div class="py-3 space-y-2 text-sm relative z-10">
 <div>
 <span class="font-label-md text-[9px] uppercase tracking-wider text-outline block">Beneficiarios</span>
-<span class="font-medium text-primary">Rubén &amp; Yareli</span>
+<span class="font-medium text-primary">Yareli Franco López</span>
 </div>
 <div>
-<span class="font-label-md text-[9px] uppercase tracking-wider text-outline block">CLABE Interbancaria</span>
-<span class="font-mono text-[15px] font-semibold tracking-wider text-primary" id="clabeNumber">000000000000000000</span>
+<span class="font-label-md text-[9px] uppercase tracking-wider text-outline block">Numero de tarjeta</span>
+<span class="font-mono text-[15px] font-semibold tracking-wider text-primary" id="clabeNumber">4152314642706256</span>
 </div>
 </div>
 <button class="w-full py-2.5 px-4 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2 hover:bg-primary-container active:scale-95 transition-all relative z-10" onclick="copyClabe()">
@@ -617,7 +618,7 @@
 </div>
 <div class="relative z-10">
 <label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Mensaje para los novios (opcional)</label>
-<textarea class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestMessage" placeholder="¡Felicidades, nos vemos pronto!" rows="2"></textarea>
+<textarea class="w-full h-24 min-h-24 max-h-24 resize-none bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestMessage" placeholder="¡Felicidades, nos vemos pronto!" rows="2"></textarea>
 </div>
 <button class="w-full py-3.5 px-6 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2.5 hover:bg-primary-container active:scale-95 transition-all shadow-md relative z-10" type="submit">
 <span class="material-symbols-outlined text-[17px] text-white" data-icon="send">send</span>
@@ -803,7 +804,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">6:45 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Entrada triunfal</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción: “Welcome to the Jungle”. 2 chisperos; 52 invitados reciben a los novios con servilletas arriba.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción: “Welcome to the Jungle”. 2 chispero/Segundo; 32 invitados los reciben con servilletas arriba.</p>
 </div>
 
 <!-- 7:00 PM -->
@@ -819,7 +820,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">7:45 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Brindis</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Mamá de Yareli: Rosa López. Papás de Rubén: Cecilia Ramos y Héctor Coss.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Mamá de Yareli: Rosa López. <br>Papás de Rubén: Celia Lamas y Héctor Coss.</p>
 </div>
 
 <!-- 8:00 PM -->
@@ -827,7 +828,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">8:00 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Vals</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Vals de Yareli y su mamá, de Yareli y Rubén, y vals de los novios.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">-Yareli y mamá*(Rosa López) canción <br>-Yareli y Rubén/papás *(Celia Lamas y Héctor Coss) canción <br>-vals novios/canción.</p>
 </div>
 
 <!-- 8:20 PM -->
@@ -835,7 +836,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">8:20 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Apertura de fiesta</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción especial. Pantuflas y termos para los invitados.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción especial.<br> Pantuflas y termos para los invitados.</p>
 </div>
 
 <!-- 8:40 PM -->
@@ -843,7 +844,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-primary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">8:40 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Capitanes de mesa</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Damos y damas. Canción: “Jamaica Bam Bam”.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Damos y Damas.<br> Canción: “Jamaica Bam Bam”.</p>
 </div>
 
 <!-- 9:40 PM -->
@@ -851,7 +852,7 @@
 <div class="absolute -left-[31px] top-1 w-3.5 h-3.5 rounded-full bg-secondary border-2 border-white"></div>
 <span class="font-label-md text-[10px] font-bold text-secondary uppercase tracking-wider block">9:40 PM</span>
 <h4 class="font-headline-md text-sm text-primary font-medium">Ramo de listones y liga</h4>
-<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción del ramo: “Crazy in Love” — Beyoncé. Canción de la liga: “Mambo” — La Rabalera.</p>
+<p class="text-xs text-on-surface-variant font-light mt-0.5">Canción del ramo: “Crazy in Love” — Beyoncé.<br> Canción liga: “Put it on me / Toro mambo / La rabia.</p>
 </div>
 
 <!-- 10:00 PM -->
@@ -899,11 +900,25 @@
 </div>
 </div>
 <!-- PANEL PRIVADO DE ADMINISTRACIÓN -->
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="adminLoginPanel" aria-hidden="true">
+<form class="relative max-w-sm w-full bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl p-5" id="adminLoginForm">
+<div class="flex items-center justify-between mb-4">
+<div><h3 class="font-headline-md text-lg text-primary">Acceso Novios</h3><p class="text-xs text-outline mt-1">Inicia sesión para ver el dashboard.</p></div>
+<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminLoginBtn" type="button" aria-label="Cerrar acceso"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1" for="adminEmail">Correo</label>
+<input class="w-full mb-3 bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="adminEmail" autocomplete="email" required type="email">
+<label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1" for="adminPassword">Contraseña</label>
+<input class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="adminPassword" autocomplete="current-password" required type="password">
+<p class="hidden text-xs text-red-700 mt-3" id="adminLoginError"></p>
+<button class="w-full mt-4 py-2.5 px-4 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-widest hover:bg-primary-container transition-all" id="adminLoginSubmit" type="submit">Iniciar sesión</button>
+</form>
+</div>
 <div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="adminPanel" aria-hidden="true">
 <div class="relative max-w-lg w-full max-h-[90vh] overflow-y-auto bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl" onclick="event.stopPropagation()">
 <div class="sticky top-0 z-10 px-5 py-4 bg-[#FAF8F2] border-b border-tertiary/30 flex items-center justify-between">
 <div><h3 class="font-headline-md text-lg text-primary">Dashboard Editorial</h3></div>
-<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminBtn" type="button" aria-label="Cerrar panel"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<div class="flex items-center gap-2"><button class="px-2.5 py-1.5 rounded-full bg-white border border-tertiary/40 text-outline font-label-md text-[9px] uppercase" id="adminLogoutBtn" type="button">Salir</button><button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminBtn" type="button" aria-label="Cerrar panel"><span class="material-symbols-outlined text-[18px]">close</span></button></div>
 </div>
 <div class="p-5 space-y-5">
 <div class="grid grid-cols-3 gap-2 text-center">
@@ -931,12 +946,11 @@
     let isPlaying = false;
     const SUPABASE_URL = 'https://kcxqyakzggfhoejbupgm.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_ZZ-MzCxqOkO7rfU-NTatHQ_0Wdbe0uG';
-    const ADMIN_PASSWORD = 'Contraseña123';
+    const ADMIN_EMAIL = 'bodarubenyareli@gmail.com';
     const TEST_GUEST_ALBUM = true;
     const supabaseClient = window.supabase && !SUPABASE_URL.includes('YOUR-')
       ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
       : null;
-    let adminUnlocked = false;
 
     const musicBtn = document.getElementById('musicToggleBtn');
     const musicIcon = document.getElementById('musicIcon');
@@ -996,6 +1010,7 @@
     const weddingDate = new Date('2026-11-14T15:00:00').getTime();
     const GUEST_ALBUM_BUCKET = 'album-invitados';
     let guestAlbumEnabled = false;
+    let guestAlbumExpanded = false;
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -1051,12 +1066,42 @@
 
     function renderGuestAlbum(files, targetId) {
       const grid = document.getElementById(targetId);
-      grid.innerHTML = files.length
-        ? files.map((file) => {
+      const isPublicAlbum = targetId === 'guestAlbumGrid';
+      const visibleFiles = isPublicAlbum && !guestAlbumExpanded ? files.slice(0, 2) : files;
+      grid.classList.toggle('hidden', isPublicAlbum && !files.length);
+      grid.replaceChildren();
+      if (files.length) {
+        visibleFiles.forEach((file, index) => {
           const url = file.url || getAlbumImageUrl(file.name);
-          return `<a class="aspect-square rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block" href="${escapeHtml(url)}" target="_blank" rel="noopener noreferrer"><img class="w-full h-full object-cover" src="${escapeHtml(url)}" alt="Foto compartida por un invitado" loading="lazy"></a>`;
-        }).join('')
-        : '<p class="col-span-full text-xs text-outline text-center py-4">Aún no hay fotos compartidas.</p>';
+          const link = document.createElement('a');
+          link.className = 'aspect-square rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
+          link.href = url;
+          link.setAttribute('aria-label', 'Ampliar foto compartida');
+          link.addEventListener('click', (event) => {
+            event.preventDefault();
+            openLightbox(url, 'Foto compartida por un invitado');
+          });
+
+          const image = document.createElement('img');
+          image.className = 'w-full h-full object-cover';
+          image.src = url;
+          image.alt = 'Foto compartida por un invitado';
+          image.loading = isPublicAlbum && index < 2 ? 'eager' : 'lazy';
+          link.appendChild(image);
+          grid.appendChild(link);
+        });
+      } else {
+        const emptyMessage = document.createElement('p');
+        emptyMessage.className = 'col-span-full text-xs text-outline text-center py-4';
+        emptyMessage.textContent = 'Aún no hay fotos compartidas.';
+        grid.appendChild(emptyMessage);
+      }
+      if (isPublicAlbum) {
+        const toggleButton = document.getElementById('guestAlbumToggleBtn');
+        const canExpand = files.length > 2;
+        toggleButton.classList.toggle('hidden', !canExpand);
+        toggleButton.textContent = guestAlbumExpanded ? 'Mostrar menos fotos' : `Ver todas las fotos (${files.length})`;
+      }
     }
 
     async function listGuestAlbum() {
@@ -1367,6 +1412,7 @@
       feedback.classList.remove('hidden');
       showToast("¡Canción agregada a la lista!");
       document.getElementById('songForm').reset();
+      await loadSongFeed();
       setTimeout(() => feedback.classList.add('hidden'), 4000);
     }
 
@@ -1376,6 +1422,19 @@
       panel.classList.toggle('flex', isVisible);
       panel.setAttribute('aria-hidden', String(!isVisible));
       document.body.style.overflow = isVisible ? 'hidden' : '';
+    }
+
+    function setAdminLoginVisibility(isVisible) {
+      const panel = document.getElementById('adminLoginPanel');
+      panel.classList.toggle('hidden', !isVisible);
+      panel.classList.toggle('flex', isVisible);
+      panel.setAttribute('aria-hidden', String(!isVisible));
+    }
+
+    function setAdminLoginError(message) {
+      const error = document.getElementById('adminLoginError');
+      error.textContent = message;
+      error.classList.toggle('hidden', !message);
     }
 
     async function loadAdminDashboard() {
@@ -1409,16 +1468,49 @@
     }
 
     document.getElementById('adminAccessBtn').addEventListener('click', async () => {
-      if (!adminUnlocked) {
-        const password = window.prompt('Contraseña de los novios:');
-        if (password !== ADMIN_PASSWORD) {
-          showToast('Contraseña incorrecta.');
-          return;
-        }
-        adminUnlocked = true;
+      if (!supabaseClient) {
+        showToast('No se pudo conectar con el acceso seguro.');
+        return;
       }
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session?.user?.email === ADMIN_EMAIL) {
+        setAdminVisibility(true);
+        await loadAdminDashboard();
+        return;
+      }
+      document.getElementById('adminEmail').value = ADMIN_EMAIL;
+      setAdminLoginError('');
+      setAdminLoginVisibility(true);
+    });
+    document.getElementById('adminLoginForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const submit = document.getElementById('adminLoginSubmit');
+      submit.disabled = true;
+      setAdminLoginError('');
+      const email = document.getElementById('adminEmail').value.trim().toLowerCase();
+      const password = document.getElementById('adminPassword').value;
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      submit.disabled = false;
+      if (error || data.user?.email !== ADMIN_EMAIL) {
+        if (!error && data.session) await supabaseClient.auth.signOut();
+        setAdminLoginError('No se pudo iniciar sesión con esta cuenta.');
+        return;
+      }
+      document.getElementById('adminPassword').value = '';
+      setAdminLoginVisibility(false);
       setAdminVisibility(true);
       await loadAdminDashboard();
+    });
+    document.getElementById('closeAdminLoginBtn').addEventListener('click', () => setAdminLoginVisibility(false));
+    document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
+      const { error } = await supabaseClient.auth.signOut();
+      if (error) {
+        console.error('No se pudo cerrar la sesión:', error);
+        showToast('No se pudo cerrar la sesión.');
+        return;
+      }
+      setAdminVisibility(false);
+      showToast('Sesión cerrada.');
     });
     document.getElementById('closeAdminBtn').addEventListener('click', () => setAdminVisibility(false));
     document.getElementById('adminPanel').addEventListener('click', (event) => {
@@ -1429,6 +1521,10 @@
       const hasFiles = document.getElementById('guestPhotoInput').files.length > 0;
       button.classList.toggle('hidden', !hasFiles);
       button.classList.toggle('flex', hasFiles);
+    });
+    document.getElementById('guestAlbumToggleBtn').addEventListener('click', async () => {
+      guestAlbumExpanded = !guestAlbumExpanded;
+      await loadGuestAlbum();
     });
     document.getElementById('uploadGuestPhotosBtn').addEventListener('click', uploadGuestPhotos);
     document.getElementById('downloadAlbumBtn').addEventListener('click', downloadGuestAlbum);
