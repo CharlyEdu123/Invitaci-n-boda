@@ -36,14 +36,11 @@ create policy "invitados pueden ver ultimas canciones"
   to anon, authenticated
   using (true);
 
--- Esta política permite cargar el dashboard protegido por prompt en un HTML estático.
--- Para privacidad real, reemplázala por una política basada en Supabase Auth
--- (por ejemplo, usando auth.uid() y una tabla de perfiles administradores).
 drop policy if exists "dashboard puede leer asistencias" on public.asistencias;
 create policy "dashboard puede leer asistencias"
   on public.asistencias for select
-  to anon, authenticated
-  using (true);
+  to authenticated
+  using ((auth.jwt() ->> 'email') = 'bodarubenyareli@gmail.com');
 
 alter table public.canciones replica identity full;
 alter table public.asistencias replica identity full;
@@ -75,6 +72,7 @@ create policy "invitados pueden subir fotos al album"
   to anon, authenticated
   with check (
     bucket_id = 'album-invitados'
+    and name ~ '^[0-9]+-[A-Za-z0-9-]+\.(jpg|jpeg|png|webp)$'
     and lower(storage.extension(name)) in ('jpg', 'jpeg', 'png', 'webp')
     and (metadata->>'mimetype') in ('image/jpeg', 'image/png', 'image/webp')
     and coalesce((metadata->>'size')::bigint, 0) <= 10485760
