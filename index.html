@@ -472,6 +472,23 @@
 <div class="hidden grid grid-cols-2 gap-3 mt-5 relative z-10" id="guestAlbumGrid"></div>
 <button class="hidden mx-auto mt-4 px-4 py-2 rounded-full border border-secondary/40 text-secondary font-label-md text-[10px] uppercase tracking-wider hover:bg-secondary-fixed/30 transition-colors" id="guestAlbumToggleBtn" type="button">Ver todas las fotos</button>
 </section>
+<div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="guestAlbumModal" aria-hidden="true">
+<div class="relative w-full max-w-lg max-h-[90vh] bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl p-5 flex flex-col" onclick="event.stopPropagation()">
+<div class="flex items-center justify-between gap-3 mb-4">
+<div>
+<h3 class="font-headline-md text-lg text-primary">Álbum de invitados</h3>
+<p class="text-xs text-outline mt-1" id="guestAlbumPageStatus"></p>
+</div>
+<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline flex items-center justify-center" id="closeGuestAlbumBtn" type="button" aria-label="Cerrar álbum"><span class="material-symbols-outlined text-[18px]">close</span></button>
+</div>
+<div class="grid grid-cols-3 gap-2 overflow-y-auto overscroll-contain" id="guestAlbumModalGrid"></div>
+<div class="flex items-center justify-between gap-3 mt-4 pt-4 border-t border-tertiary/30">
+<button class="px-3 py-2 rounded-full border border-secondary/40 text-secondary font-label-md text-[10px] uppercase tracking-wider disabled:opacity-40" id="guestAlbumPreviousBtn" type="button">Anterior</button>
+<span class="text-[10px] text-outline text-center" id="guestAlbumPageNumber"></span>
+<button class="px-3 py-2 rounded-full border border-secondary/40 text-secondary font-label-md text-[10px] uppercase tracking-wider disabled:opacity-40" id="guestAlbumNextBtn" type="button">Siguiente</button>
+</div>
+</div>
+</div>
 
 <!-- MESA DE REGALOS & DATOS BANCARIOS -->
 <section class="px-margin py-space-xl bg-[#FAF8F2] border-t border-tertiary/30 relative overflow-hidden" id="mesa-regalos">
@@ -957,7 +974,9 @@
     const weddingDate = new Date('2026-11-14T15:00:00').getTime();
     const GUEST_ALBUM_BUCKET = 'album-invitados';
     let guestAlbumEnabled = false;
-    let guestAlbumExpanded = false;
+    let guestAlbumFiles = [];
+    let guestAlbumPage = 1;
+    const GUEST_ALBUM_PAGE_SIZE = 12;
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -1014,7 +1033,7 @@
     function renderGuestAlbum(files, targetId) {
       const grid = document.getElementById(targetId);
       const isPublicAlbum = targetId === 'guestAlbumGrid';
-      const visibleFiles = isPublicAlbum && !guestAlbumExpanded ? files.slice(0, 2) : files;
+      const visibleFiles = isPublicAlbum ? files.slice(0, 2) : files;
       grid.classList.toggle('hidden', isPublicAlbum && !files.length);
       grid.replaceChildren();
       if (files.length) {
@@ -1047,8 +1066,52 @@
         const toggleButton = document.getElementById('guestAlbumToggleBtn');
         const canExpand = files.length > 2;
         toggleButton.classList.toggle('hidden', !canExpand);
-        toggleButton.textContent = guestAlbumExpanded ? 'Mostrar menos fotos' : `Ver todas las fotos (${files.length})`;
+        toggleButton.textContent = `Ver todas las fotos (${files.length})`;
       }
+    }
+
+    function renderGuestAlbumModal() {
+      const grid = document.getElementById('guestAlbumModalGrid');
+      const totalPages = Math.max(1, Math.ceil(guestAlbumFiles.length / GUEST_ALBUM_PAGE_SIZE));
+      guestAlbumPage = Math.min(guestAlbumPage, totalPages);
+      const start = (guestAlbumPage - 1) * GUEST_ALBUM_PAGE_SIZE;
+      const visibleFiles = guestAlbumFiles.slice(start, start + GUEST_ALBUM_PAGE_SIZE);
+      grid.replaceChildren();
+
+      visibleFiles.forEach((file) => {
+        const url = file.url || getAlbumImageUrl(file.name);
+        const link = document.createElement('a');
+        link.className = 'aspect-square rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
+        link.href = url;
+        link.setAttribute('aria-label', 'Ampliar foto compartida');
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          openLightbox(url, 'Foto compartida por un invitado');
+        });
+
+        const image = document.createElement('img');
+        image.className = 'w-full h-full object-cover';
+        image.src = url;
+        image.alt = 'Foto compartida por un invitado';
+        image.loading = 'lazy';
+        link.appendChild(image);
+        grid.appendChild(link);
+      });
+
+      const pageStatus = document.getElementById('guestAlbumPageStatus');
+      const pageNumber = document.getElementById('guestAlbumPageNumber');
+      pageStatus.textContent = `${guestAlbumFiles.length} fotos · 12 por página`;
+      pageNumber.textContent = `Página ${guestAlbumPage} de ${totalPages}`;
+      document.getElementById('guestAlbumPreviousBtn').disabled = guestAlbumPage === 1;
+      document.getElementById('guestAlbumNextBtn').disabled = guestAlbumPage === totalPages;
+    }
+
+    function setGuestAlbumModalVisibility(isVisible) {
+      const modal = document.getElementById('guestAlbumModal');
+      modal.classList.toggle('hidden', !isVisible);
+      modal.classList.toggle('flex', isVisible);
+      modal.setAttribute('aria-hidden', String(!isVisible));
+      document.body.style.overflow = isVisible ? 'hidden' : '';
     }
 
     async function listGuestAlbum() {
@@ -1068,6 +1131,7 @@
       }
       try {
         const files = await listGuestAlbum();
+        guestAlbumFiles = files.map((file) => ({ ...file, url: getAlbumImageUrl(file.name) }));
         renderGuestAlbum(files, 'guestAlbumGrid');
         setGuestAlbumStatus(files.length ? `${files.length} foto${files.length === 1 ? '' : 's'} compartida${files.length === 1 ? '' : 's'}.` : 'Aún no hay fotos compartidas.');
       } catch (error) {
@@ -1489,9 +1553,27 @@
       button.classList.toggle('hidden', !hasFiles);
       button.classList.toggle('flex', hasFiles);
     });
-    document.getElementById('guestAlbumToggleBtn').addEventListener('click', async () => {
-      guestAlbumExpanded = !guestAlbumExpanded;
-      await loadGuestAlbum();
+    document.getElementById('guestAlbumToggleBtn').addEventListener('click', () => {
+      guestAlbumPage = 1;
+      renderGuestAlbumModal();
+      setGuestAlbumModalVisibility(true);
+    });
+    document.getElementById('closeGuestAlbumBtn').addEventListener('click', () => setGuestAlbumModalVisibility(false));
+    document.getElementById('guestAlbumModal').addEventListener('click', (event) => {
+      if (event.target.id === 'guestAlbumModal') setGuestAlbumModalVisibility(false);
+    });
+    document.getElementById('guestAlbumPreviousBtn').addEventListener('click', () => {
+      if (guestAlbumPage > 1) {
+        guestAlbumPage -= 1;
+        renderGuestAlbumModal();
+      }
+    });
+    document.getElementById('guestAlbumNextBtn').addEventListener('click', () => {
+      const totalPages = Math.ceil(guestAlbumFiles.length / GUEST_ALBUM_PAGE_SIZE);
+      if (guestAlbumPage < totalPages) {
+        guestAlbumPage += 1;
+        renderGuestAlbumModal();
+      }
     });
     document.getElementById('uploadGuestPhotosBtn').addEventListener('click', uploadGuestPhotos);
     document.getElementById('downloadAlbumBtn').addEventListener('click', downloadGuestAlbum);
