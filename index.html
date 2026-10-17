@@ -931,6 +931,14 @@
     let musicGestureActivated = false;
     let welcomeOverlayCloseTimer = null;
 
+    function closeWelcomeOverlay() {
+      if (welcomeOverlayCloseTimer) {
+        window.clearTimeout(welcomeOverlayCloseTimer);
+        welcomeOverlayCloseTimer = null;
+      }
+      welcomeMusicOverlay.classList.add('opacity-0', 'pointer-events-none');
+    }
+
 
     function updateMusicControls(playing) {
       isPlaying = playing;
@@ -964,6 +972,7 @@
     }
 
     function openInvitationFromWelcome() {
+      closeWelcomeOverlay();
       startBackgroundMusic(true);
     }
 
