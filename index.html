@@ -917,6 +917,7 @@
     const musicLabel = document.getElementById('musicLabel');
     const soundWave = document.getElementById('soundWaveAnim');
     const backgroundMusic = document.getElementById('backgroundMusic');
+    let musicGestureActivated = false;
 
 
     function updateMusicControls(playing) {
@@ -929,15 +930,18 @@
     }
 
     function startBackgroundMusic(showMessage = false) {
-      backgroundMusic.play().then(() => {
+      return backgroundMusic.play().then(() => {
         updateMusicControls(true);
+        musicGestureActivated = true;
+        document.removeEventListener('pointerdown', activateMusicOnGesture);
+        window.removeEventListener('scroll', activateMusicOnScroll);
 
         if (showMessage) {
           showToast("Reproduciendo música de fondo 🎵");
         }
       }).catch(() => {
         updateMusicControls(false);
-
+        return false;
       });
     }
 
@@ -958,22 +962,20 @@
 
     musicBtn.addEventListener('click', toggleMusic);
     function activateMusicOnGesture(event) {
-      if (musicBtn.contains(event.target)) return;
-      if (!isPlaying) activateMusicFromGesture();
+      if (musicBtn.contains(event.target) || musicGestureActivated) return;
+      activateMusicFromGesture();
     }
 
-    document.addEventListener('pointerdown', activateMusicOnGesture, { once: true, passive: true });
+    document.addEventListener('pointerdown', activateMusicOnGesture, { passive: true });
     function activateMusicOnScroll() {
-      if (isPlaying) {
-        window.removeEventListener('scroll', activateMusicOnScroll);
-        return;
-      }
+      if (musicGestureActivated) return;
       activateMusicFromGesture();
     }
 
     window.addEventListener('scroll', activateMusicOnScroll, { passive: true });
     backgroundMusic.addEventListener('pause', () => updateMusicControls(false));
     backgroundMusic.addEventListener('play', () => updateMusicControls(true));
+    startBackgroundMusic();
 
 
     // Countdown Timer (Nov 14, 2026 15:00:00)
