@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
 <meta charset="utf-8">
@@ -50,6 +50,16 @@
 <audio id="backgroundMusic" loop preload="auto" autoplay>
   <source src="Musica/Rampa, Adam Port, &amp;ME - Crazy For It (SPOTISAVER).mp3" type="audio/mpeg">
 </audio>
+
+<div class="fixed inset-0 z-[60] flex cursor-pointer items-center justify-center bg-[#F7F5ED]/95 px-6 text-center backdrop-blur-sm transition-opacity duration-500" id="welcomeMusicOverlay" role="button" tabindex="0" aria-label="Abrir invitación y comenzar la música">
+  <div class="w-full max-w-sm rounded-2xl border border-secondary/30 bg-[#FAF8F2] p-8 shadow-2xl">
+    <span class="material-symbols-outlined mb-3 text-4xl text-secondary" data-icon="favorite">favorite</span>
+    <p class="font-label-md text-[10px] uppercase tracking-[0.25em] text-secondary">Rubén &amp; Yareli</p>
+    <h2 class="mt-2 font-headline-md text-2xl text-primary">¡Bienvenidos!</h2>
+    <p class="mt-3 text-sm font-light text-on-surface-variant">Toca la pantalla para abrir nuestra invitación y escuchar la música.</p>
+    <span class="material-symbols-outlined mt-5 animate-pulse text-2xl text-secondary" data-icon="touch_app">touch_app</span>
+  </div>
+</div>
 
 
 <!-- CONTENT CANVAS -->
@@ -917,7 +927,9 @@
     const musicLabel = document.getElementById('musicLabel');
     const soundWave = document.getElementById('soundWaveAnim');
     const backgroundMusic = document.getElementById('backgroundMusic');
+    const welcomeMusicOverlay = document.getElementById('welcomeMusicOverlay');
     let musicGestureActivated = false;
+    let welcomeOverlayCloseTimer = null;
 
 
     function updateMusicControls(playing) {
@@ -933,6 +945,11 @@
       return backgroundMusic.play().then(() => {
         updateMusicControls(true);
         musicGestureActivated = true;
+        if (!welcomeOverlayCloseTimer) {
+          welcomeOverlayCloseTimer = window.setTimeout(() => {
+            welcomeMusicOverlay.classList.add('opacity-0', 'pointer-events-none');
+          }, 2500);
+        }
         document.removeEventListener('pointerdown', activateMusicOnGesture);
         document.removeEventListener('touchstart', activateMusicOnTouch);
         window.removeEventListener('scroll', activateMusicOnScroll);
@@ -945,6 +962,18 @@
         return false;
       });
     }
+
+    function openInvitationFromWelcome() {
+      startBackgroundMusic(true);
+    }
+
+    welcomeMusicOverlay.addEventListener('click', openInvitationFromWelcome);
+    welcomeMusicOverlay.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openInvitationFromWelcome();
+      }
+    });
 
     function activateMusicFromGesture() {
       backgroundMusic.muted = false;
@@ -1367,7 +1396,11 @@
     function changeLightboxImage(direction) {
       if (lightboxGallery.length < 2) return;
       lightboxIndex = (lightboxIndex + direction + lightboxGallery.length) % lightboxGallery.length;
+      const img = document.getElementById('lightboxImg');
+      img.classList.remove('lightbox-image-changing', 'lightbox-image-changing-back');
+      void img.offsetWidth;
       showLightboxImage();
+      img.classList.add(direction > 0 ? 'lightbox-image-changing' : 'lightbox-image-changing-back');
     }
 
     function handleLightboxTouchStart(event) {

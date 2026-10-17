@@ -71,6 +71,43 @@ body {
   object-fit: contain;
 }
 
+.lightbox-image-changing {
+  animation: lightbox-image-change 420ms ease-out both;
+}
+
+.lightbox-image-changing-back {
+  animation: lightbox-image-change-back 420ms ease-out both;
+}
+
+@keyframes lightbox-image-change {
+  from {
+    opacity: 0;
+    transform: translateX(1.5rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes lightbox-image-change-back {
+  from {
+    opacity: 0;
+    transform: translateX(-1.5rem) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lightbox-image-changing,
+  .lightbox-image-changing-back {
+    animation-duration: 1ms;
+  }
+}
+
 main > section,
 main > footer {
   position: relative;
