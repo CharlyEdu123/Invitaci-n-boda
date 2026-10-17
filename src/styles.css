@@ -38,6 +38,39 @@ body {
   user-select: none;
 }
 
+.guest-album-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.88) contrast(0.98);
+}
+
+.guest-album-grid {
+  grid-auto-rows: minmax(0, auto);
+}
+
+.guest-album-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 1;
+  min-height: 0;
+}
+
+.lightbox-content {
+  overflow: hidden;
+}
+
+.lightbox-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 7rem);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
 main > section,
 main > footer {
   position: relative;

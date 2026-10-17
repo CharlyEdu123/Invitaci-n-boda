@@ -409,7 +409,7 @@
 
         <!-- Foto 2 (Superior derecha) -->
         <div class="col-span-1 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[4/3] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Caminata')">
-          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen1.jpg" alt="Foto 2B">
+          <img class="w-full h-full object-cover carousel-img active opacity-100 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen1.jpg" alt="Foto 2B">
           <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen11.jpg" alt="Foto 2C">
         </div>
 
@@ -422,8 +422,8 @@
 
         <!-- Foto 4 (Ancha central / Span completo de 2 columnas) -->
         <div class="col-span-2 rounded-xl overflow-hidden border border-secondary/30 shadow-sm relative aspect-[16/9] carousel-container cursor-pointer" data-interval="6000" onclick="openLightbox(this.querySelector('.carousel-img.active').src, 'Atardecer')">
-          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen7.jpg" alt="Foto 4B">
-          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen13.jpg" alt="Foto 4C">
+          <img class="w-full h-full object-cover carousel-img active opacity-100 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen7.jpg" alt="Foto 4A">
+          <img class="w-full h-full object-cover carousel-img opacity-0 absolute inset-0 transition-opacity duration-[1800ms] ease-in-out" src="Imagenes/Imagen13.jpg" alt="Foto 4B">
         </div>
 
         <!-- Foto 5 (Inferior izquierda) -->
@@ -481,7 +481,7 @@
 </div>
 <button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline flex items-center justify-center" id="closeGuestAlbumBtn" type="button" aria-label="Cerrar álbum"><span class="material-symbols-outlined text-[18px]">close</span></button>
 </div>
-<div class="grid grid-cols-3 gap-2 overflow-y-auto overscroll-contain" id="guestAlbumModalGrid"></div>
+<div class="grid grid-cols-2 gap-4 overflow-y-auto overscroll-contain max-h-[58vh] p-0.5 guest-album-grid" id="guestAlbumModalGrid"></div>
 <div class="flex items-center justify-between gap-3 mt-4 pt-4 border-t border-tertiary/30">
 <button class="px-3 py-2 rounded-full border border-secondary/40 text-secondary font-label-md text-[10px] uppercase tracking-wider disabled:opacity-40" id="guestAlbumPreviousBtn" type="button">Anterior</button>
 <span class="text-[10px] text-outline text-center" id="guestAlbumPageNumber"></span>
@@ -556,7 +556,7 @@
 </div>
 <div class="relative z-10">
 <label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Nombre completo</label>
-<input class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestName" placeholder="Ej. Familia González Morales" required="" type="text">
+<input class="w-full bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestName" placeholder="Ej. Familia González Morales" autocomplete="name" required="" minlength="2" maxlength="100" pattern="[A-Za-zÁÉÍÓÚÜÑáéíóúüñ' -]{2,100}" title="Escribe un nombre usando solo letras, espacios, apóstrofes o guiones." type="text">
 </div>
 <div class="grid grid-cols-2 gap-3 relative z-10">
 <div>
@@ -577,7 +577,7 @@
 </div>
 <div class="relative z-10">
 <label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1">Mensaje para los novios (opcional)</label>
-<textarea class="w-full h-24 min-h-24 max-h-24 resize-none bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestMessage" placeholder="¡Felicidades, nos vemos pronto!" rows="2"></textarea>
+<textarea class="w-full h-24 min-h-24 max-h-24 resize-none bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary transition-colors" id="guestMessage" placeholder="¡Felicidades, nos vemos pronto!" maxlength="300" rows="2"></textarea>
 </div>
 <button class="w-full py-3.5 px-6 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium flex items-center justify-center gap-2.5 hover:bg-primary-container active:scale-95 transition-all shadow-md relative z-10" type="submit">
 <span class="material-symbols-outlined text-[17px] text-white" data-icon="send">send</span>
@@ -598,8 +598,8 @@
 </div>
 <form class="space-y-2 relative z-10" id="songForm" onsubmit="handleSongSubmit(event)">
 <div class="grid grid-cols-2 gap-2">
-<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songTitle" placeholder="Título" required="" type="text">
-<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songArtist" placeholder="Artista (opcional)" type="text">
+<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songTitle" placeholder="Título" required="" minlength="1" maxlength="120" type="text">
+<input class="bg-[#FFFFFF] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="songArtist" placeholder="Artista (opcional)" maxlength="100" type="text">
 </div>
 <button class="w-full px-4 py-2 bg-primary text-white rounded-lg font-label-md text-xs uppercase tracking-[0.2em] font-medium hover:bg-primary-container active:scale-95 transition-all shadow-sm" type="submit">
         Sugerir
@@ -849,11 +849,11 @@
 </div>
 <!-- LIGHTBOX MODAL -->
 <div class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-out overscroll-none touch-none" id="lightboxModal" aria-hidden="true" onclick="closeLightbox()">
-<div class="relative max-w-sm w-full opacity-0 scale-95 transition-all duration-300 ease-out" id="lightboxContent" onclick="event.stopPropagation()">
-<button class="absolute -top-10 right-0 text-white flex items-center gap-1 font-label-md text-xs uppercase" onclick="closeLightbox()">
+<div class="relative w-full max-w-[min(92vw,720px)] max-h-[calc(100dvh-2rem)] pt-10 opacity-0 scale-95 transition-all duration-300 ease-out lightbox-content" id="lightboxContent" onclick="event.stopPropagation()">
+<button class="absolute top-0 right-0 z-10 min-w-11 min-h-11 px-2 rounded-full bg-black/50 border border-white/50 text-white flex items-center justify-center font-label-md text-xs uppercase" aria-label="Cerrar imagen" onclick="closeLightbox()">
 <span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
 </button>
-<img class="w-full h-auto rounded-lg shadow-2xl border border-secondary/30" data-alt="Expanded view of couple editorial gallery image." id="lightboxImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3Iz6bum16f5JuY1w9bIZ5ms82Mn7Ua9bErI8YhElpSsBxybuH5AnKnZHmohiq9EWHti9JadkYbTFOvgKAYdW79F65D2Yy_P0nf01HXp45SjzULmPSrFnxlyKfhLuKORvH3naQD_U5yGL2lSz7vaCQYnKHBG6rQur6oiiiVD1Yz5oPcuk2lt_MmvgK5kyTH2RPm6_py_3es4WscXKyuhn4wg22WoRx6_yQzu4rRNWxLIqcSdKCMnjyQ">
+<img class="lightbox-image rounded-lg shadow-2xl border border-secondary/30" data-alt="Expanded view of couple editorial gallery image." id="lightboxImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG3Iz6bum16f5JuY1w9bIZ5ms82Mn7Ua9bErI8YhElpSsBxybuH5AnKnZHmohiq9EWHti9JadkYbTFOvgKAYdW79F65D2Yy_P0nf01HXp45SjzULmPSrFnxlyKfhLuKORvH3naQD_U5yGL2lSz7vaCQYnKHBG6rQur6oiiiVD1Yz5oPcuk2lt_MmvgK5kyTH2RPm6_py_3es4WscXKyuhn4wg22WoRx6_yQzu4rRNWxLIqcSdKCMnjyQ">
 <p class="text-white/80 font-headline-md italic text-center text-sm mt-3" id="lightboxCaption"></p>
 </div>
 </div>
@@ -1066,7 +1066,7 @@
         visibleFiles.forEach((file, index) => {
           const url = file.url || getAlbumImageUrl(file.name);
           const link = document.createElement('a');
-          link.className = 'aspect-square rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
+          link.className = 'guest-album-card rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
           link.href = url;
           link.setAttribute('aria-label', 'Ampliar foto compartida');
           link.addEventListener('click', (event) => {
@@ -1075,7 +1075,7 @@
           });
 
           const image = document.createElement('img');
-          image.className = 'w-full h-full object-cover';
+          image.className = 'guest-album-photo';
           image.src = url;
           image.alt = 'Foto compartida por un invitado';
           image.loading = isPublicAlbum && index < 2 ? 'eager' : 'lazy';
@@ -1107,7 +1107,7 @@
       visibleFiles.forEach((file) => {
         const url = file.url || getAlbumImageUrl(file.name);
         const link = document.createElement('a');
-        link.className = 'aspect-square rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
+        link.className = 'guest-album-card rounded-lg overflow-hidden border border-secondary/30 bg-[#FAF8F2] block cursor-pointer';
         link.href = url;
         link.setAttribute('aria-label', 'Ampliar foto compartida');
         link.addEventListener('click', (event) => {
@@ -1116,7 +1116,7 @@
         });
 
         const image = document.createElement('img');
-        image.className = 'w-full h-full object-cover';
+        image.className = 'guest-album-photo';
         image.src = url;
         image.alt = 'Foto compartida por un invitado';
         image.loading = 'lazy';
@@ -1126,7 +1126,7 @@
 
       const pageStatus = document.getElementById('guestAlbumPageStatus');
       const pageNumber = document.getElementById('guestAlbumPageNumber');
-      pageStatus.textContent = `${guestAlbumFiles.length} fotos · 12 por página`;
+      pageStatus.textContent = `${guestAlbumFiles.length} fotos · ${GUEST_ALBUM_PAGE_SIZE} por página`;
       pageNumber.textContent = `Página ${guestAlbumPage} de ${totalPages}`;
       document.getElementById('guestAlbumPreviousBtn').disabled = guestAlbumPage === 1;
       document.getElementById('guestAlbumNextBtn').disabled = guestAlbumPage === totalPages;
@@ -1348,7 +1348,14 @@
         if (images.length < 2) return;
 
         let activeIndex = images.findIndex((image) => image.classList.contains('active'));
-        if (activeIndex < 0) activeIndex = 0;
+        if (activeIndex < 0) {
+          activeIndex = 0;
+          images[activeIndex].classList.add('active', 'opacity-100');
+          images.slice(1).forEach((image) => {
+            image.classList.remove('active', 'opacity-100');
+            image.classList.add('opacity-0');
+          });
+        }
 
         const showNextImage = () => {
           const nextIndex = (activeIndex + 1) % images.length;
@@ -1376,7 +1383,18 @@
 
     function getGuestCount(value) {
       const count = Number.parseInt(value, 10);
-      return Number.isFinite(count) ? count : 1;
+      return [1, 2, 3].includes(count) ? count : 0;
+    }
+
+    function isValidGuestName(name) {
+      return name.length >= 2
+        && name.length <= 100
+        && /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]/.test(name)
+        && /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ' -]+$/.test(name);
+    }
+
+    function isValidText(value, maxLength) {
+      return value.length <= maxLength && value.trim().length > 0;
     }
 
     async function loadSongFeed() {
@@ -1417,6 +1435,21 @@
       const message = document.getElementById('guestMessage').value.trim();
       const guests = getGuestCount(count);
 
+      if (!isValidGuestName(name)) {
+        showToast('Escribe un nombre válido, sin números ni símbolos.');
+        document.getElementById('guestName').focus();
+        return;
+      }
+      if (!['¡Sí, asistiré con gusto!', 'Lo siento, no podré asistir'].includes(status) || !guests) {
+        showToast('Revisa los datos de asistencia seleccionados.');
+        return;
+      }
+      if (message.length > 300) {
+        showToast('El mensaje no puede superar 300 caracteres.');
+        document.getElementById('guestMessage').focus();
+        return;
+      }
+
       const whatsappWindow = window.open('', '_blank');
       if (supabaseClient) {
         const { error } = await supabaseClient.from('asistencias').insert({
@@ -1433,7 +1466,7 @@
         showToast('Supabase no está configurado; se abrirá WhatsApp.');
       }
 
-      const phone = "523222104532";
+      const phone = "523221419676";
       const fullMessage = `¡Hola Rubén & Yareli! 👋💍\n\nConfirmo mi asistencia para su boda:\n• Nombre: ${name}\n• Estado: ${status}\n• Pases: ${count}\n${message ? `• Mensaje: "${message}"\n` : ''}\n      ¡Nos vemos el 14 de noviembre de 2026!`;
 
       const encoded = encodeURIComponent(fullMessage);
@@ -1450,6 +1483,16 @@
       const title = document.getElementById('songTitle').value.trim();
       const artist = document.getElementById('songArtist').value.trim();
       const feedback = document.getElementById('songFeedback');
+      if (!isValidText(title, 120)) {
+        showToast('Escribe un título de canción válido (máximo 120 caracteres).');
+        document.getElementById('songTitle').focus();
+        return;
+      }
+      if (artist.length > 100) {
+        showToast('El nombre del artista no puede superar 100 caracteres.');
+        document.getElementById('songArtist').focus();
+        return;
+      }
       if (!supabaseClient) {
         showToast('Configura Supabase antes de sugerir.');
         return;
