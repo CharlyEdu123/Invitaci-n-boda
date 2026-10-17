@@ -35,3 +35,9 @@
     .botanical-accent img {
       display: block;
     }
+
+    @media (max-width: 640px) {
+      .botanical-accent {
+        display: none;
+      }
+    }
