@@ -134,6 +134,9 @@
 <span class="font-label-md text-[9px] uppercase tracking-wider text-secondary font-semibold">Segundos</span>
 </div>
 </div>
+<p class="mt-4 text-center text-xs text-on-surface-variant relative z-10" id="guestAlbumCountdownMessage">
+  El álbum de fotos se abrirá cuando termine la cuenta regresiva. Después podrás compartir tus recuerdos.
+</p>
 </div>
 </section>
 <!-- BIENVENIDA & MENSAJE CON INTEGRACIÓN BOTÁNICA NATURAL -->
@@ -917,7 +920,7 @@
     const SUPABASE_URL = 'https://kcxqyakzggfhoejbupgm.supabase.co';
     const SUPABASE_ANON_KEY = 'sb_publishable_ZZ-MzCxqOkO7rfU-NTatHQ_0Wdbe0uG';
     const ADMIN_EMAIL = 'bodarubenyareli@gmail.com';
-    const TEST_GUEST_ALBUM = true;
+    const TEST_GUEST_ALBUM = false;
     const supabaseClient = window.supabase && !SUPABASE_URL.includes('YOUR-')
       ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
       : null;
@@ -1042,6 +1045,7 @@
         document.getElementById('cd-minutes').textContent = '00';
         document.getElementById('cd-seconds').textContent = '00';
         enableGuestAlbum();
+        document.getElementById('guestAlbumCountdownMessage').textContent = '¡El álbum ya está abierto! Comparte las fotos de este día tan especial.';
         return;
       }
 
@@ -1054,6 +1058,7 @@
       document.getElementById('cd-hours').textContent = hours < 10 ? '0' + hours : hours;
       document.getElementById('cd-minutes').textContent = minutes < 10 ? '0' + minutes : minutes;
       document.getElementById('cd-seconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+      document.getElementById('guestAlbumCountdownMessage').textContent = 'El álbum de fotos se abrirá cuando termine la cuenta regresiva. Después podrás compartir tus recuerdos.';
     }
 
     function enableGuestAlbum() {
@@ -1360,6 +1365,7 @@
     let lightboxIndex = 0;
     let lightboxTouchStartX = 0;
     let lightboxTouchStartY = 0;
+    let lightboxHistoryPushed = false;
 
     function showLightboxImage() {
       const file = lightboxGallery[lightboxIndex];
@@ -1390,6 +1396,10 @@
       lightboxPreviousOverflow = document.body.style.overflow;
       lightboxGallery = gallery;
       lightboxIndex = Math.max(0, lightboxGallery.findIndex((item) => item.url === src));
+      if (!lightboxHistoryPushed) {
+        window.history.pushState({ lightboxOpen: true }, '', window.location.href);
+        lightboxHistoryPushed = true;
+      }
       document.body.style.overflow = 'hidden';
       showLightboxImage();
       modal.setAttribute('aria-hidden', 'false');
@@ -1423,7 +1433,7 @@
       changeLightboxImage(deltaX < 0 ? 1 : -1);
     }
 
-    function closeLightbox() {
+    function hideLightbox() {
       const modal = document.getElementById('lightboxModal');
       const content = document.getElementById('lightboxContent');
       modal.setAttribute('aria-hidden', 'true');
@@ -1432,11 +1442,23 @@
       content.classList.remove('opacity-100', 'scale-100');
       content.classList.add('opacity-0', 'scale-95');
       document.body.style.overflow = lightboxPreviousOverflow;
+      lightboxHistoryPushed = false;
+    }
+
+    function closeLightbox() {
+      if (lightboxHistoryPushed) {
+        window.history.back();
+        return;
+      }
+      hideLightbox();
     }
 
     const lightboxModal = document.getElementById('lightboxModal');
     lightboxModal.addEventListener('touchstart', handleLightboxTouchStart, { passive: true });
     lightboxModal.addEventListener('touchend', handleLightboxTouchEnd, { passive: true });
+    window.addEventListener('popstate', () => {
+      if (lightboxHistoryPushed) hideLightbox();
+    });
 
     function initCarousels() {
       document.querySelectorAll('.carousel-container').forEach((carousel, index) => {
