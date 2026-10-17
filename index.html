@@ -47,7 +47,7 @@
 <div class="w-[2px] bg-primary h-2 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
 </div>
 </button></header>
-<audio id="backgroundMusic" loop preload="auto">
+<audio id="backgroundMusic" loop preload="auto" autoplay>
   <source src="Musica/Rampa, Adam Port, &amp;ME - Crazy For It (SPOTISAVER).mp3" type="audio/mpeg">
 </audio>
 
@@ -963,9 +963,15 @@
     }
 
     document.addEventListener('pointerdown', activateMusicOnGesture, { once: true, passive: true });
-    document.addEventListener('scroll', () => {
-      if (!isPlaying) activateMusicFromGesture();
-    }, { once: true, passive: true });
+    function activateMusicOnScroll() {
+      if (isPlaying) {
+        window.removeEventListener('scroll', activateMusicOnScroll);
+        return;
+      }
+      activateMusicFromGesture();
+    }
+
+    window.addEventListener('scroll', activateMusicOnScroll, { passive: true });
     backgroundMusic.addEventListener('pause', () => updateMusicControls(false));
     backgroundMusic.addEventListener('play', () => updateMusicControls(true));
 
@@ -1028,6 +1034,24 @@
     function getAlbumImageUrl(path) {
       if (!supabaseClient) return '';
       return supabaseClient.storage.from(GUEST_ALBUM_BUCKET).getPublicUrl(path).data.publicUrl;
+    }
+
+    async function hasAdminSession() {
+      if (!supabaseClient) return false;
+      const { data, error } = await supabaseClient.auth.getUser();
+      if (error) {
+        console.error('No se pudo validar la sesión administrativa:', error);
+        return false;
+      }
+      return data.user?.email?.toLowerCase() === ADMIN_EMAIL;
+    }
+
+    async function requireAdminSession() {
+      if (await hasAdminSession()) return true;
+      setAdminVisibility(false);
+      setAdminLoginVisibility(true);
+      setAdminLoginError('Tu sesión administrativa no es válida o ha caducado.');
+      return false;
     }
 
     function renderGuestAlbum(files, targetId) {
@@ -1190,6 +1214,7 @@
     }
 
     async function loadAdminAlbum() {
+      if (!await requireAdminSession()) return;
       const status = document.getElementById('adminAlbumStatus');
       if (!supabaseClient) {
         status.textContent = 'Configura Supabase para ver el álbum.';
@@ -1207,6 +1232,10 @@
     }
 
     async function downloadGuestAlbum() {
+      if (!await requireAdminSession()) {
+        showToast('Inicia sesión como administrador para descargar el álbum.');
+        return;
+      }
       if (!supabaseClient) {
         showToast('Configura Supabase antes de descargar el álbum.');
         return;
@@ -1462,6 +1491,7 @@
     }
 
     async function loadAdminDashboard() {
+      if (!await requireAdminSession()) return;
       if (!supabaseClient) {
         showToast('Configura Supabase antes de abrir el dashboard.');
         return;
@@ -1496,8 +1526,7 @@
         showToast('No se pudo conectar con el acceso seguro.');
         return;
       }
-      const { data: { session } } = await supabaseClient.auth.getSession();
-      if (session?.user?.email === ADMIN_EMAIL) {
+      if (await hasAdminSession()) {
         setAdminVisibility(true);
         await loadAdminDashboard();
         return;
@@ -1508,6 +1537,10 @@
     });
     document.getElementById('adminLoginForm').addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (!supabaseClient) {
+        setAdminLoginError('No se pudo conectar con el acceso seguro.');
+        return;
+      }
       const submit = document.getElementById('adminLoginSubmit');
       submit.disabled = true;
       setAdminLoginError('');
@@ -1577,6 +1610,11 @@
     });
     document.getElementById('uploadGuestPhotosBtn').addEventListener('click', uploadGuestPhotos);
     document.getElementById('downloadAlbumBtn').addEventListener('click', downloadGuestAlbum);
+    supabaseClient?.auth.onAuthStateChange((_event, session) => {
+      if (session?.user?.email?.toLowerCase() !== ADMIN_EMAIL) {
+        setAdminVisibility(false);
+      }
+    });
     loadSongFeed();
     subscribeToSongs();
     </script>
