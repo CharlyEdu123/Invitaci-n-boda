@@ -31,11 +31,15 @@ body {
 }
 
 .botanical-accent {
-  mix-blend-mode: normal;
-  opacity: 0.28;
-  filter: saturate(0.85);
+  mix-blend-mode: multiply;
+  opacity: 0.2;
+  filter: saturate(0.72) contrast(0.94);
   pointer-events: none;
   user-select: none;
+}
+
+.botanical-accent img {
+  display: block;
 }
 
 main > section,
