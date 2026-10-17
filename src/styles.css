@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #e5e2d6;
+  color: #23281E;
+  font-family: 'Montserrat', sans-serif;
+  min-height: max(884px, 100dvh);
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.botanical-accent {
+  mix-blend-mode: normal;
+  opacity: 0.28;
+  filter: saturate(0.85);
+  pointer-events: none;
+  user-select: none;
+}
+
+main > section,
+main > footer {
+  position: relative;
+  z-index: 1;
+}
