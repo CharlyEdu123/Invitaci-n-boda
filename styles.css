@@ -26,18 +26,8 @@
     /* Uniform cohesive botanical decorative watermark style */
     .botanical-accent {
       mix-blend-mode: multiply;
-      opacity: 0.2;
-      filter: saturate(0.72) contrast(0.94);
+      opacity: 0.35;
+      filter: saturate(0.85);
       pointer-events: none;
       user-select: none;
-    }
-
-    .botanical-accent img {
-      display: block;
-    }
-
-    @media (max-width: 640px) {
-      .botanical-accent {
-        display: none;
-      }
     }
