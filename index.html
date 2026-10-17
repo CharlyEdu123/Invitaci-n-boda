@@ -934,6 +934,7 @@
         updateMusicControls(true);
         musicGestureActivated = true;
         document.removeEventListener('pointerdown', activateMusicOnGesture);
+        document.removeEventListener('touchstart', activateMusicOnTouch);
         window.removeEventListener('scroll', activateMusicOnScroll);
 
         if (showMessage) {
@@ -966,7 +967,13 @@
       activateMusicFromGesture();
     }
 
+    function activateMusicOnTouch(event) {
+      if (musicBtn.contains(event.target) || musicGestureActivated) return;
+      activateMusicFromGesture();
+    }
+
     document.addEventListener('pointerdown', activateMusicOnGesture, { passive: true });
+    document.addEventListener('touchstart', activateMusicOnTouch, { passive: true });
     function activateMusicOnScroll() {
       if (musicGestureActivated) return;
       activateMusicFromGesture();
@@ -1071,7 +1078,7 @@
           link.setAttribute('aria-label', 'Ampliar foto compartida');
           link.addEventListener('click', (event) => {
             event.preventDefault();
-            openLightbox(url, 'Foto compartida por un invitado');
+            openGuestAlbumLightbox(file);
           });
 
           const image = document.createElement('img');
@@ -1112,7 +1119,7 @@
         link.setAttribute('aria-label', 'Ampliar foto compartida');
         link.addEventListener('click', (event) => {
           event.preventDefault();
-          openLightbox(url, 'Foto compartida por un invitado');
+          openGuestAlbumLightbox(file);
         });
 
         const image = document.createElement('img');
@@ -1314,21 +1321,67 @@
     }
 
     let lightboxPreviousOverflow = '';
+    let lightboxGallery = [];
+    let lightboxIndex = 0;
+    let lightboxTouchStartX = 0;
+    let lightboxTouchStartY = 0;
 
-    function openLightbox(src, caption) {
-      const modal = document.getElementById('lightboxModal');
-      const content = document.getElementById('lightboxContent');
+    function showLightboxImage() {
+      const file = lightboxGallery[lightboxIndex];
+      if (!file) return;
       const img = document.getElementById('lightboxImg');
       const cap = document.getElementById('lightboxCaption');
+      img.src = file.url || file;
+      cap.textContent = file.caption || 'Foto compartida por un invitado';
+    }
+
+    function openGuestAlbumLightbox(file) {
+      const gallery = guestAlbumFiles.length ? guestAlbumFiles : [file];
+      const selectedUrl = file.url || getAlbumImageUrl(file.name);
+      const selectedIndex = gallery.findIndex((item) => (
+        (item.url || getAlbumImageUrl(item.name)) === selectedUrl
+      ));
+      lightboxGallery = gallery.map((item) => ({
+        url: item.url || getAlbumImageUrl(item.name),
+        caption: 'Foto compartida por un invitado'
+      }));
+      lightboxIndex = selectedIndex >= 0 ? selectedIndex : 0;
+      openLightbox(lightboxGallery[lightboxIndex].url, lightboxGallery[lightboxIndex].caption, lightboxGallery);
+    }
+
+    function openLightbox(src, caption, gallery = [{ url: src, caption }]) {
+      const modal = document.getElementById('lightboxModal');
+      const content = document.getElementById('lightboxContent');
       lightboxPreviousOverflow = document.body.style.overflow;
+      lightboxGallery = gallery;
+      lightboxIndex = Math.max(0, lightboxGallery.findIndex((item) => item.url === src));
       document.body.style.overflow = 'hidden';
-      img.src = src;
-      cap.textContent = caption;
+      showLightboxImage();
       modal.setAttribute('aria-hidden', 'false');
       modal.classList.remove('opacity-0', 'pointer-events-none');
       modal.classList.add('opacity-100');
       content.classList.remove('opacity-0', 'scale-95');
       content.classList.add('opacity-100', 'scale-100');
+    }
+
+    function changeLightboxImage(direction) {
+      if (lightboxGallery.length < 2) return;
+      lightboxIndex = (lightboxIndex + direction + lightboxGallery.length) % lightboxGallery.length;
+      showLightboxImage();
+    }
+
+    function handleLightboxTouchStart(event) {
+      const touch = event.touches[0];
+      lightboxTouchStartX = touch.clientX;
+      lightboxTouchStartY = touch.clientY;
+    }
+
+    function handleLightboxTouchEnd(event) {
+      const touch = event.changedTouches[0];
+      const deltaX = touch.clientX - lightboxTouchStartX;
+      const deltaY = touch.clientY - lightboxTouchStartY;
+      if (Math.abs(deltaX) < 50 || Math.abs(deltaX) <= Math.abs(deltaY)) return;
+      changeLightboxImage(deltaX < 0 ? 1 : -1);
     }
 
     function closeLightbox() {
@@ -1341,6 +1394,10 @@
       content.classList.add('opacity-0', 'scale-95');
       document.body.style.overflow = lightboxPreviousOverflow;
     }
+
+    const lightboxModal = document.getElementById('lightboxModal');
+    lightboxModal.addEventListener('touchstart', handleLightboxTouchStart, { passive: true });
+    lightboxModal.addEventListener('touchend', handleLightboxTouchEnd, { passive: true });
 
     function initCarousels() {
       document.querySelectorAll('.carousel-container').forEach((carousel, index) => {
