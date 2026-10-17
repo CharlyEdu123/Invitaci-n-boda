@@ -1,117 +1,26 @@
 ﻿<!DOCTYPE html>
-<html class="scroll-smooth" lang="es" style="">
+<html class="scroll-smooth" lang="es">
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title class="">Boda Rubén &amp; Yareli — Invitación Digital</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232F3E27'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' font-family='Georgia,serif' fill='%23F7F5ED'%3ER%26amp%3BY%3C/text%3E%3C/svg%3E">
 <!-- Material Symbols Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <!-- Google Fonts: Playfair Display & Montserrat -->
 <link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet">
-<!-- Tailwind CSS -->
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="dist/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-<script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          "colors": {
-            "primary": "#2F3E27",
-            "primary-container": "#3d5033",
-            "on-primary": "#ffffff",
-            "secondary": "#6F7B58",
-            "secondary-container": "#e4ecdb",
-            "on-secondary": "#ffffff",
-            "tertiary": "#A2B984",
-            "tertiary-container": "#c9dbb5",
-            "on-tertiary": "#1a2a10",
-            "neutral-bg": "#F7F5ED",
-            "surface": "#F7F5ED",
-            "background": "#F7F5ED",
-            "surface-card": "#FFFFFF",
-            "surface-container": "#F2EFE6",
-            "surface-container-low": "#FAF8F2",
-            "surface-container-high": "#EAE6DB",
-            "outline": "#788171",
-            "outline-variant": "#D0D7C6",
-            "on-surface": "#23281E",
-            "on-surface-variant": "#4F5948",
-            "secondary-fixed": "#DCE5D1",
-            "on-secondary-fixed": "#1B2412"
-          },
-          "borderRadius": {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          "spacing": {
-            "space-xl": "2.75rem",
-            "margin": "1.25rem",
-            "space-lg": "1.75rem",
-            "space-md": "1rem",
-            "space-xs": "0.25rem",
-            "space-sm": "0.5rem"
-          },
-          "fontFamily": {
-            "display-mobile": ["Playfair Display", "serif"],
-            "display": ["Playfair Display", "serif"],
-            "headline-md": ["Playfair Display", "serif"],
-            "headline-lg": ["Playfair Display", "serif"],
-            "body-lg": ["Montserrat", "sans-serif"],
-            "label-md": ["Montserrat", "sans-serif"],
-            "headline-lg-mobile": ["Playfair Display", "serif"],
-            "body-md": ["Montserrat", "sans-serif"],
-            "label-lg": ["Montserrat", "sans-serif"]
-          }
-        }
-      }
-    }
-  </script>
-<style>
-    .material-symbols-outlined {
-      font-family: 'Material Symbols Outlined';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 24px;
-      line-height: 1;
-      letter-spacing: normal;
-      text-transform: none;
-      display: inline-block;
-      white-space: nowrap;
-      word-wrap: normal;
-      direction: ltr;
-      -webkit-font-feature-settings: 'liga';
-      -webkit-font-smoothing: antialiased;
-    }
-    body {
-      background-color: #e5e2d6;
-      color: #23281E;
-      font-family: 'Montserrat', sans-serif;
-      min-height: max(884px, 100dvh);
-    }
-    .font-serif {
-      font-family: 'Playfair Display', serif;
-    }
-    /* Uniform cohesive botanical decorative watermark style */
-    .botanical-accent {
-      mix-blend-mode: multiply;
-      opacity: 0.35;
-      filter: saturate(0.85);
-      pointer-events: none;
-      user-select: none;
-    }
-  </style>
+
 </head>
 <body class="bg-[#e7e5dc] text-on-surface antialiased font-body-md selection:bg-tertiary selection:text-primary">
 <div class="relative max-w-[480px] mx-auto min-h-screen bg-[#F7F5ED] shadow-2xl overflow-x-hidden flex flex-col">
 
     <!-- Background side foliage with uniform cohesive opacity: 0.35, multiply blend, and delicate watermark look -->
-<div aria-hidden="true" class="pointer-events-none select-none absolute inset-0 z-0 overflow-hidden">
+<div aria-hidden="true" class="pointer-events-none select-none absolute inset-0 z-0 overflow-hidden" id="backgroundBotanicals">
 <img alt="" class="absolute -left-10 top-24 w-32 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
 <img alt="" class="absolute -right-10 top-80 w-32 h-auto botanical-accent scale-x-[-1]" src="Decoracion/Flor1.jpg">
 <img alt="" class="absolute -left-10 top-[900px] w-36 h-auto botanical-accent" src="Decoracion/Flor1.jpg">
@@ -138,12 +47,10 @@
 <div class="w-[2px] bg-primary h-2 rounded-full animate-pulse" style="animation-delay: 0.3s"></div>
 </div>
 </button></header>
-<audio id="backgroundMusic" loop preload="auto" autoplay>
+<audio id="backgroundMusic" loop preload="auto">
   <source src="Musica/Rampa, Adam Port, &amp;ME - Crazy For It (SPOTISAVER).mp3" type="audio/mpeg">
 </audio>
-<button class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 z-40 px-4 py-2.5 rounded-full bg-primary text-white shadow-lg font-label-md text-[10px] uppercase tracking-wider" id="musicEnablePrompt" type="button">
-  Toca para activar la música 🎵
-</button>
+
 
 <!-- CONTENT CANVAS -->
 <main class="pt-16 flex-1">
@@ -229,7 +136,7 @@
 </div>
 <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3 relative z-10">Querida familia y amigos</h2>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed max-w-sm mx-auto font-light relative z-10">
-      Hay momentos en la vida que son irrepetibles, pero compartirlos con quienes más amamos los hace eternos. Gracias por ser parte de nuestra historia y por acompañarnos en el día más feliz de nuestras vidas.
+      Hay momentos en la vida que son irrepetibles, pero compartirlos con quienes más amamos los have eternos. Gracias por ser parte de nuestra historia y por acompañarnos en el día más feliz de nuestras vidas.
     </p>
 <p class="font-headline-md italic text-primary mt-4 font-normal text-lg relative z-10">Con todo nuestro cariño, Rubén &amp; Yareli</p>
 </section>
@@ -308,10 +215,10 @@
 <span class="material-symbols-outlined text-secondary text-[20px]" data-icon="schedule">schedule</span>
 </div>
 <p class="font-label-md text-label-md uppercase tracking-[0.25em] text-secondary font-semibold">Itinerario</p>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Programa del Gran Día</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mt-1">Program del Gran Día</h2>
 <div class="w-10 h-[1px] bg-tertiary mx-auto my-2"></div>
 <p class="font-body-md text-xs text-on-surface-variant font-light max-w-xs mx-auto">
-        Cada momento ha sido preparado con amor para celebrar nuestra unión contigo.
+        Cada memento ha sido preparado con amor para celebrar nuestra unión contigo.
       </p>
 </div>
 <!-- Tarjeta Resumen con CTA -->
@@ -889,8 +796,8 @@
 </div>
 </div>
 <!-- LIGHTBOX MODAL -->
-<div class="fixed inset-0 z-50 bg-black/90 hidden items-center justify-center p-4 backdrop-blur-sm" id="lightboxModal" onclick="closeLightbox()">
-<div class="relative max-w-sm w-full" onclick="event.stopPropagation()">
+<div class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-out overscroll-none touch-none" id="lightboxModal" aria-hidden="true" onclick="closeLightbox()">
+<div class="relative max-w-sm w-full opacity-0 scale-95 transition-all duration-300 ease-out" id="lightboxContent" onclick="event.stopPropagation()">
 <button class="absolute -top-10 right-0 text-white flex items-center gap-1 font-label-md text-xs uppercase" onclick="closeLightbox()">
 <span class="material-symbols-outlined text-2xl" data-icon="close">close</span>
 </button>
@@ -902,9 +809,10 @@
 <!-- PANEL PRIVADO DE ADMINISTRACIÓN -->
 <div class="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm hidden items-center justify-center p-4" id="adminLoginPanel" aria-hidden="true">
 <form class="relative max-w-sm w-full bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl p-5" id="adminLoginForm">
-<div class="flex items-center justify-between mb-4">
-<div><h3 class="font-headline-md text-lg text-primary">Acceso Novios</h3><p class="text-xs text-outline mt-1">Inicia sesión para ver el dashboard.</p></div>
-<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminLoginBtn" type="button" aria-label="Cerrar acceso"><span class="material-symbols-outlined text-[18px]">close</span></button>
+<div class="relative mb-4 pr-10">
+<h3 class="font-headline-md text-lg text-primary">Acceso Novios</h3>
+<p class="text-xs text-outline mt-1">Inicia sesión para ver el dashboard.</p>
+<button class="absolute top-0 right-0 w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline flex items-center justify-center hover:bg-[#F2EFE6] transition-colors" id="closeAdminLoginBtn" type="button" aria-label="Cerrar acceso"><span class="material-symbols-outlined text-[18px]">close</span></button>
 </div>
 <label class="font-label-md text-[10px] uppercase tracking-wider text-outline block mb-1" for="adminEmail">Correo</label>
 <input class="w-full mb-3 bg-[#FAF8F2] border border-tertiary/50 rounded-lg px-3 py-2 text-sm text-on-surface focus:outline-none focus:border-secondary" id="adminEmail" autocomplete="email" required type="email">
@@ -918,7 +826,7 @@
 <div class="relative max-w-lg w-full max-h-[90vh] overflow-y-auto bg-[#F7F5ED] rounded-2xl border border-secondary/30 shadow-2xl" onclick="event.stopPropagation()">
 <div class="sticky top-0 z-10 px-5 py-4 bg-[#FAF8F2] border-b border-tertiary/30 flex items-center justify-between">
 <div><h3 class="font-headline-md text-lg text-primary">Dashboard Editorial</h3></div>
-<div class="flex items-center gap-2"><button class="px-2.5 py-1.5 rounded-full bg-white border border-tertiary/40 text-outline font-label-md text-[9px] uppercase" id="adminLogoutBtn" type="button">Salir</button><button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline" id="closeAdminBtn" type="button" aria-label="Cerrar panel"><span class="material-symbols-outlined text-[18px]">close</span></button></div>
+<button class="w-8 h-8 rounded-full bg-white border border-tertiary/40 text-outline flex items-center justify-center hover:bg-[#F2EFE6] transition-colors" id="closeAdminBtn" type="button" aria-label="Cerrar panel"><span class="material-symbols-outlined text-[18px]">close</span></button>
 </div>
 <div class="p-5 space-y-5">
 <div class="grid grid-cols-3 gap-2 text-center">
@@ -957,7 +865,7 @@
     const musicLabel = document.getElementById('musicLabel');
     const soundWave = document.getElementById('soundWaveAnim');
     const backgroundMusic = document.getElementById('backgroundMusic');
-    const musicEnablePrompt = document.getElementById('musicEnablePrompt');
+
 
     function updateMusicControls(playing) {
       isPlaying = playing;
@@ -971,14 +879,13 @@
     function startBackgroundMusic(showMessage = false) {
       backgroundMusic.play().then(() => {
         updateMusicControls(true);
-        musicEnablePrompt.classList.add('hidden');
+
         if (showMessage) {
           showToast("Reproduciendo música de fondo 🎵");
         }
-      }).catch((error) => {
-        console.warn('La reproducción automática requiere interacción del usuario:', error);
+      }).catch(() => {
         updateMusicControls(false);
-        musicEnablePrompt.classList.remove('hidden');
+
       });
     }
 
@@ -998,13 +905,18 @@
     }
 
     musicBtn.addEventListener('click', toggleMusic);
-    musicEnablePrompt.addEventListener('click', activateMusicFromGesture);
-    document.addEventListener('pointerdown', () => {
+    function activateMusicOnGesture(event) {
+      if (musicBtn.contains(event.target)) return;
+      if (!isPlaying) activateMusicFromGesture();
+    }
+
+    document.addEventListener('pointerdown', activateMusicOnGesture, { once: true, passive: true });
+    document.addEventListener('scroll', () => {
       if (!isPlaying) activateMusicFromGesture();
     }, { once: true, passive: true });
     backgroundMusic.addEventListener('pause', () => updateMusicControls(false));
     backgroundMusic.addEventListener('play', () => updateMusicControls(true));
-    startBackgroundMusic();
+
 
     // Countdown Timer (Nov 14, 2026 15:00:00)
     const weddingDate = new Date('2026-11-14T15:00:00').getTime();
@@ -1271,20 +1183,33 @@
       document.body.style.overflow = '';
     }
 
+    let lightboxPreviousOverflow = '';
+
     function openLightbox(src, caption) {
       const modal = document.getElementById('lightboxModal');
+      const content = document.getElementById('lightboxContent');
       const img = document.getElementById('lightboxImg');
       const cap = document.getElementById('lightboxCaption');
+      lightboxPreviousOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
       img.src = src;
       cap.textContent = caption;
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modal.classList.add('opacity-100');
+      content.classList.remove('opacity-0', 'scale-95');
+      content.classList.add('opacity-100', 'scale-100');
     }
 
     function closeLightbox() {
       const modal = document.getElementById('lightboxModal');
-      modal.classList.remove('flex');
-      modal.classList.add('hidden');
+      const content = document.getElementById('lightboxContent');
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      content.classList.remove('opacity-100', 'scale-100');
+      content.classList.add('opacity-0', 'scale-95');
+      document.body.style.overflow = lightboxPreviousOverflow;
     }
 
     function initCarousels() {
@@ -1501,8 +1426,15 @@
       setAdminVisibility(true);
       await loadAdminDashboard();
     });
-    document.getElementById('closeAdminLoginBtn').addEventListener('click', () => setAdminLoginVisibility(false));
-    document.getElementById('adminLogoutBtn').addEventListener('click', async () => {
+    document.getElementById('closeAdminLoginBtn').addEventListener('click', () => {
+      document.getElementById('adminPassword').value = '';
+      setAdminLoginVisibility(false);
+    });
+    async function closeAdminSession() {
+      if (!supabaseClient) {
+        setAdminVisibility(false);
+        return;
+      }
       const { error } = await supabaseClient.auth.signOut();
       if (error) {
         console.error('No se pudo cerrar la sesión:', error);
@@ -1511,10 +1443,10 @@
       }
       setAdminVisibility(false);
       showToast('Sesión cerrada.');
-    });
-    document.getElementById('closeAdminBtn').addEventListener('click', () => setAdminVisibility(false));
+    }
+    document.getElementById('closeAdminBtn').addEventListener('click', closeAdminSession);
     document.getElementById('adminPanel').addEventListener('click', (event) => {
-      if (event.target.id === 'adminPanel') setAdminVisibility(false);
+      if (event.target.id === 'adminPanel') closeAdminSession();
     });
     document.getElementById('guestPhotoInput').addEventListener('change', () => {
       const button = document.getElementById('uploadGuestPhotosBtn');
