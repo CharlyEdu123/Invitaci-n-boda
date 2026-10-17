@@ -949,7 +949,7 @@
       musicBtn.classList.toggle('bg-tertiary/20', playing);
     }
 
-    function startBackgroundMusic(showMessage = false) {
+    function startBackgroundMusic() {
       return backgroundMusic.play().then(() => {
         updateMusicControls(true);
         musicGestureActivated = true;
@@ -962,9 +962,6 @@
         document.removeEventListener('touchstart', activateMusicOnTouch);
         window.removeEventListener('scroll', activateMusicOnScroll);
 
-        if (showMessage) {
-          showToast("Reproduciendo música de fondo 🎵");
-        }
       }).catch(() => {
         updateMusicControls(false);
         return false;
@@ -973,7 +970,7 @@
 
     function openInvitationFromWelcome() {
       closeWelcomeOverlay();
-      startBackgroundMusic(true);
+      startBackgroundMusic();
     }
 
     welcomeMusicOverlay.addEventListener('click', openInvitationFromWelcome);
@@ -995,7 +992,7 @@
         updateMusicControls(false);
         showToast("Música en pausa");
       } else {
-        startBackgroundMusic(true);
+        startBackgroundMusic();
       }
     }
 
